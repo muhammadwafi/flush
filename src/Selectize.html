@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= htmlWebpackPlugin.options.title %> | MWadmin</title>
+    <%= htmlWebpackPlugin.options.metaHeader %>
+</head>
+<body>
+    <div class="fl-app" id="app">
+        <!-- Sidebar -->
+        <%= htmlWebpackPlugin.options.sidebarNav %>
+
+        <!-- Content -->
+        <section class="fl-content">
+            <!-- Content Header -->
+            <%= htmlWebpackPlugin.options.contentHeader %>
+
+            <!-- Main Content -->
+            <main class="container-fluid" role="main">
+                <div class="row">
+                    <div class="col-xl-10">
+                        <!-- Single Select -->
+                        <div class="card" id="single-select">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="mb-1 h3">Single Select</div>
+                                    <div class="small text-muted">Single select form using <code>.single-choice</code> class.</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="my-input">Programming Language</label>
+                                            <select class="single-choice" 
+                                            placeholder="Select your language...">
+                                                <option value="" selected="selected"></option>
+                                                <option value="Python">Python</option>
+                                                <option value="Javascript">Javascript</option>
+                                                <option value="Java">Java</option>
+                                                <option value="Lua">Lua</option>
+                                                <option value="PHP">PHP</option>
+                                                <option value="Kotlin">Kotlin</option>
+                                                <option value="Go">Go</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#singleSelect__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="singleSelect__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;div class=&#x22;form-group&#x22;&#x3E;
+    &#x3C;label for=&#x22;my-input&#x22;&#x3E;Programming Language&#x3C;/label&#x3E;
+    &#x3C;select class=&#x22;single-choice&#x22; 
+    placeholder=&#x22;Select your language...&#x22;&#x3E;
+        &#x3C;option value=&#x22;&#x22; selected=&#x22;selected&#x22;&#x3E;&#x3C;/option&#x3E;
+        &#x3C;option value=&#x22;Python&#x22;&#x3E;Python&#x3C;/option&#x3E;
+        &#x3C;option value=&#x22;Javascript&#x22;&#x3E;Javascript&#x3C;/option&#x3E;
+        &#x3C;option value=&#x22;Java&#x22;&#x3E;Java&#x3C;/option&#x3E;
+        &#x3C;option value=&#x22;Lua&#x22;&#x3E;Lua&#x3C;/option&#x3E;
+        &#x3C;option value=&#x22;PHP&#x22;&#x3E;PHP&#x3C;/option&#x3E;
+        &#x3C;option value=&#x22;Kotlin&#x22;&#x3E;Kotlin&#x3C;/option&#x3E;
+        &#x3C;option value=&#x22;Go&#x22;&#x3E;Go&#x3C;/option&#x3E;
+    &#x3C;/select&#x3E;
+&#x3C;/div&#x3E;
+</code></pre>
+</div>
+                            </div>
+
+                            <!-- Option Group -->
+                            <div class="card-body mt-4" id="option-group">
+                                <h5 class="card-title mb-1">Option Group</h5>
+                                <p class="small text-muted">Single select with option group</p>
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="my-input">Framework</label>
+                                            <select class="single-choice" 
+                                            placeholder="Select your framework...">
+                                                <option value="" selected="selected"></option>
+                                                <optgroup label="Backend">
+                                                    <option value="Django">Django</option>
+                                                    <option value="Flask">Flask</option>
+                                                    <option value="Play">Play</option>
+                                                    <option value="Spring">Spring</option>
+                                                    <option value="ExpressJS">ExpressJS</option>
+                                                    <option value="Laravel">Laravel</option>
+                                                    <option value="Codeigniter">Codeigniter</option>
+                                                </optgroup>
+                                                <optgroup label="Frontend">
+                                                    <option value="React">React</option>
+                                                    <option value="Vue">Vue</option>
+                                                    <option value="AngularJS">Angular</option>
+                                                    <option value="EmberJS">EmberJS</option>
+                                                    <option value="Polymer">Polymer</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#withOptionGroup__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="withOptionGroup__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;div class=&#x22;form-group&#x22;&#x3E;
+    &#x3C;label for=&#x22;my-input&#x22;&#x3E;Framework&#x3C;/label&#x3E;
+    &#x3C;select class=&#x22;single-choice&#x22; 
+    placeholder=&#x22;Select your framework...&#x22;&#x3E;
+        &#x3C;option value=&#x22;&#x22; selected=&#x22;selected&#x22;&#x3E;&#x3C;/option&#x3E;
+        &#x3C;optgroup label=&#x22;Backend&#x22;&#x3E;
+            &#x3C;option value=&#x22;Django&#x22;&#x3E;Django&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;Flask&#x22;&#x3E;Flask&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;Play&#x22;&#x3E;Play&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;Spring&#x22;&#x3E;Spring&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;ExpressJS&#x22;&#x3E;ExpressJS&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;Laravel&#x22;&#x3E;Laravel&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;Codeigniter&#x22;&#x3E;Codeigniter&#x3C;/option&#x3E;
+        &#x3C;/optgroup&#x3E;
+        &#x3C;optgroup label=&#x22;Frontend&#x22;&#x3E;
+            &#x3C;option value=&#x22;React&#x22;&#x3E;React&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;Vue&#x22;&#x3E;Vue&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;AngularJS&#x22;&#x3E;Angular&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;EmberJS&#x22;&#x3E;EmberJS&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;Polymer&#x22;&#x3E;Polymer&#x3C;/option&#x3E;
+        &#x3C;/optgroup&#x3E;
+    &#x3C;/select&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+</div>
+                            </div>
+                        </div>
+
+                        <!-- Multiple Select -->
+                        <div class="card mt-3" id="multi-select">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="mb-1 h3">Multiple Select</div>
+                                    <div class="small text-muted">Multiple select can be used by changing <code>.single-choice</code> class to <code>.multi-choice</code> class.</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="my-input">Programming Language</label>
+                                            <select class="multi-choice" 
+                                            placeholder="Select your language..." multiple="multiple">
+                                                <option value="" selected="selected"></option>
+                                                <option value="Python">Python</option>
+                                                <option value="Javascript">Javascript</option>
+                                                <option value="Java">Java</option>
+                                                <option value="Lua">Lua</option>
+                                                <option value="PHP">PHP</option>
+                                                <option value="Kotlin">Kotlin</option>
+                                                <option value="Go">Go</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#multipleSelect__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="multipleSelect__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;div class=&#x22;form-group&#x22;&#x3E;
+    &#x3C;label for=&#x22;my-input&#x22;&#x3E;Programming Language&#x3C;/label&#x3E;
+    &#x3C;select class=&#x22;multi-choice selectized&#x22; 
+    placeholder=&#x22;Select your language...&#x22;&#x3E;
+        &#x3C;option value=&#x22;&#x22; selected=&#x22;selected&#x22;&#x3E;&#x3C;/option&#x3E;
+        &#x3C;option value=&#x22;Python&#x22;&#x3E;Python&#x3C;/option&#x3E;
+        &#x3C;option value=&#x22;Javascript&#x22;&#x3E;Javascript&#x3C;/option&#x3E;
+        &#x3C;option value=&#x22;Java&#x22;&#x3E;Java&#x3C;/option&#x3E;
+        &#x3C;option value=&#x22;Lua&#x22;&#x3E;Lua&#x3C;/option&#x3E;
+        &#x3C;option value=&#x22;PHP&#x22;&#x3E;PHP&#x3C;/option&#x3E;
+        &#x3C;option value=&#x22;Kotlin&#x22;&#x3E;Kotlin&#x3C;/option&#x3E;
+        &#x3C;option value=&#x22;Go&#x22;&#x3E;Go&#x3C;/option&#x3E;
+    &#x3C;/select&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+</div>
+                            </div>
+
+                            <div class="card-body mt-4" id="more">
+                                <h5 class="card-title mb-1">More Examples</h5>
+                                <p class="">For more examples please visit official <a href=""></a> <a href="https://selectize.github.io/selectize.js/">Selectize.js</a> website.</p>
+                                <div class="row justify-content-center">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Sidenav -->
+                    <nav class="d-none d-xl-block col-xl-2">
+                        <ul class="sidenav-sticky">
+                            <li class="nav-item">
+                                <a href="#single-select">Single Select</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#option-group">Option Group</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#multi-select">Multiple Selection</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#more">More Examples</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </main>
+            
+            <!-- Content Footer -->
+            <%= htmlWebpackPlugin.options.footer %>
+        </section>
+    </div>
+    <!-- load JS scripts -->
+</body>
+</html>

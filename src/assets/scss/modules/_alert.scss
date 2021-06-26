@@ -1,0 +1,67 @@
+// alert.scss
+
+.alert {
+    @include roundedCorners(10);
+    padding: .85rem 1.25rem;
+    .alert-message {
+        display: block;
+    }
+    &.alert-with-description {
+        padding-left: 2.75rem;
+        .alert-message {
+            margin-bottom: .25rem!important;
+        }
+        .alert-icon {
+            position: absolute;
+            left: 1rem;
+            top: 10px;
+            font-size: 1.25rem;
+        }
+    }
+}
+@each $color, $values in $theme-colors {
+    .alert-#{$color} {
+        @if ($color == "light") {
+            background-color: $values;
+            border-color: $values;
+            color: $dark;
+        } @else {
+            background-color: $values;
+            border-color: $values;
+            color: $white;
+        }
+    }
+}
+// @each $label, $map in $theme-lt-colors {
+//     $base: map-get($map, base);
+//     $base-color: map-get($map, base-color);
+//     $color: darken($base-color, 10%);
+//     .alert-#{$label} {
+//         background-color: $base;
+//         border-color: $base;
+//         color: $color;
+//     }
+// }
+.alert-dismissible {
+    .close {
+        top: 6px;
+        right: 5px;
+        width: 28px!important;
+        height: 28px!important;
+        padding: .35rem!important;
+        border-radius: 50%;
+        outline: none;
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        .feather {
+            vertical-align: bottom;
+        }
+    }
+}
+
+.close {
+    font-size: 1rem;
+}

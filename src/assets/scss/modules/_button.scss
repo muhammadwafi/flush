@@ -1,0 +1,282 @@
+// button.scss
+$btn-lg-padding : .75rem 2.25rem;
+$btn-md-padding : 0.65rem 1.5rem;
+$btn-padding    : 0.5rem 1rem;
+$btn-sm-padding : 0.25rem 0.65rem;
+$btn-xs-padding : .15rem .35rem;
+
+/*----------  Button Sizing  ----------*/
+.btn {
+    @include roundedCorners(6);
+    padding: $btn-padding;
+    font-size: inherit;
+    font-weight: $font-weight-medium;
+    transition: box-shadow .15s cubic-bezier(.25,.8,.25,1),
+                background-color .15s cubic-bezier(.25,.8,.25,1),
+                transform .15s cubic-bezier(.25,.8,.25,1);
+    position: relative;
+    border-color: $border-color;
+    // disabled
+    @include disabled {
+        box-shadow: none!important;
+        outline: none!important;
+    }
+    // hover and focusing state
+    @include hover-state {
+        outline: none!important;
+        background-color: $white;
+        border-color: $border-color;
+        color: $primary;
+        &.dropdown-toggle::after {
+            border-color: $primary;
+        }
+    }
+    @include active-state {
+        transform: translate3d(0,0,0);
+        outline: none!important;
+        background-color: $light--hover;
+        border-color: $border-color;
+        box-shadow: none!important;
+        &.dropdown-toggle::after {
+            border-color: $white;
+        }
+    }
+    
+    &.btn-rounded {
+        @include roundedCorners(50);
+    }
+
+    &-fw {
+        min-width: 7rem;
+        padding: .55rem 1rem!important;
+    }
+    // ---
+    // Button Large
+    // ---
+    &-lg {
+        @include padding($btn-lg-padding);
+        @include font-size($font-size-md);
+    }
+    // ---
+    // Button Medium
+    // ---
+    &-md {
+        @include padding($btn-md-padding);
+        @include font-size(1rem);
+    }
+    // ---
+    // Button Small
+    // ---
+    &-sm {
+        padding: $btn-sm-padding;
+        @include font-size($font-size-sm);
+    }
+    // ---
+    // Button Extra Small
+    // ---
+    &-xs {
+        padding: $btn-xs-padding;
+        @include font-size($font-size-xs);
+    }
+
+    > i {
+        display: inline-block;
+        vertical-align: -.1rem;
+        margin-right: .25rem;
+        margin-left: -.15rem;
+    }
+
+    .feather {
+        vertical-align: text-top;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/*----------  Button Styles  ----------*/
+@each $color, $values in $theme-colors {
+    $hover: lighten($values, 5%);
+    $pressed: darken($values, 8%);
+    .btn-#{$color} {
+        @if ($color == "light") {
+            @include button-styles($values, $dark, $hover, false, $pressed);
+        } @else {
+            @include button-styles($values, $white, $hover, false, $pressed);
+        }
+    }
+}
+/*----------  Button Outline Style  ----------*/
+@each $color, $values in $theme-colors {
+    $pressed: darken($values, 8%);
+    .btn-outline-#{$color} {
+        @if ($color == "light") {
+            @include button-outline-styles(darken($values, 45%), $values, $dark, $pressed);
+        } @else {
+            @include button-outline-styles($values, $values, $white, $pressed);
+        }
+    }
+}
+/*----------  Lighter Button Styles  ----------*/
+@each $label, $map in $theme-lt-colors {
+    $base: map-get($map, base);
+    $base-color: map-get($map, base-color);
+    $hover: darken($base, 8%);
+    $pressed: darken($base, 10%);
+    .btn-#{$label}-lt {
+        @include button-styles($base, $base-color, $hover, $base-color, $pressed);
+    }
+}
+
+/*----------  Button Group  ----------*/
+.btn-group {
+    > .btn {
+        @include roundedCorners(6);
+    }
+    &-lg > .btn, .btn-lg {
+        @include padding($btn-lg-padding);
+        @include font-size($font-size-md);
+    }
+    &-md > .btn, .btn-md {
+        @include padding($btn-md-padding);
+        font-size: 1rem;
+    }
+    &-sm > .btn, .btn-sm {
+        padding: $btn-sm-padding;
+        font-size: $font-size-sm;
+    }
+    &-xs > .btn, .btn-xs {
+        padding: $btn-xs-padding;
+        font-size: $font-size-xs;
+    }
+}
+.btn-group,
+.btn-group-vertical {
+    > .btn {
+        border-color: $border-color;
+        @include hover-state {
+            transform: translate3d(0,0,0);
+        }
+    }
+}
+
+/*----------  Button Default  ----------*/
+.btn.btn-default {
+    background: $white;
+    color: $black;
+    border-color: $border-color;
+    @include hover-state {
+        color: $primary;
+        background: $white;
+        border-color: $border-color;
+        box-shadow: 0 2px 1px -1px rgba($light-30, 0.5), 
+                        0 3px 6px rgba($light-30, 0.25)!important;
+        &.dropdown-toggle::after {
+            border-color: $primary;
+        }
+    }
+    @include active-state {
+        color: $primary!important;
+        background: $light--hover;
+        border-color: $light-30;
+        text-decoration: none;
+        box-shadow: none!important;
+        &.dropdown-toggle::after {
+            border-color: $primary;
+        }
+    } 
+}
+/*----------  Button Link  ----------*/
+.btn-link {
+    color: inherit;
+    position: relative;
+    border-color: transparent;
+    @include hover-state {
+        background: rgba(3, 22, 85, 0.08);
+        text-decoration: none;
+        box-shadow: none!important;
+        border-color: transparent;
+        transform: translate3d(0,0,0);
+    }
+    @include active-state {
+        background: rgba(3, 22, 85, 0.095);
+        border-color: transparent;
+        text-decoration: none;
+        box-shadow: none!important;
+    }
+}
+
+// Button icon
+$btn-icon-lg-size : 56px;
+$btn-icon-md-size : 46px;
+$btn-icon-size    : 38px;
+$btn-icon-sm-size : 24px;
+$btn-icon-xs-size : 18px;
+
+.btn.btn-icon {
+    border-radius: 50%;
+    text-align: center;
+    padding: 7px 8px;
+    width: $btn-icon-size;
+    height: $btn-icon-size;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .feather {
+        vertical-align: text-bottom;
+    }
+
+    > i {
+        font-size: 1.25rem;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    &.btn-lg {
+        i {
+            font-size: 1.75rem;
+        }
+        svg {
+            width: 28px;
+            height: 28px;
+        }
+        width: $btn-icon-lg-size;
+        height: $btn-icon-lg-size;
+    }
+    &.btn-md {
+        i {
+            font-size: 1.5rem;
+        }
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+        width: $btn-icon-md-size;
+        height: $btn-icon-md-size;
+    }
+    &.btn-sm {
+        i {
+            font-size: 1rem;
+        }
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+        width: $btn-icon-sm-size;
+        height: $btn-icon-sm-size;
+        padding: 2px 3px;
+    }
+    &.btn-xs {
+        i {
+            font-size: .75rem;
+        }
+        svg {
+            width: 12px;
+            height: 12px;
+            vertical-align: text-top;
+        }
+        width: $btn-icon-xs-size;
+        height: $btn-icon-xs-size;
+        padding: 0 2px;
+    }
+}

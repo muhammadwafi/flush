@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= htmlWebpackPlugin.options.title %> | MWadmin</title>
+    <%= htmlWebpackPlugin.options.metaHeader %>
+</head>
+<body>
+    <div class="fl-app" id="app">
+        <!-- Sidebar -->
+        <%= htmlWebpackPlugin.options.sidebarNav %>
+
+        <!-- Content -->
+        <section class="fl-content">
+            <!-- Content Header -->
+            <%= htmlWebpackPlugin.options.contentHeader %>
+
+            <!-- Main Content -->
+            <main class="container-fluid" role="main">
+                <div class="row">
+                    <div class="col-xl-10">
+                        <!-- How to Use -->
+                        <div class="card" id="how-to-use">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="mb-1 h3">How to use</div>
+                                    <div class="small text-muted">To use this icon see some description below.</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text mb-1">To use an icon on your page, add a <code>data-feather</code> attribute with the icon name to an element. Example: </p>
+                                <div class="syntax-highlight mb-2">
+                                    <pre><code class="language-html">&#x3C;i data-feather=&#x22;<strong>activity</strong>&#x22;&#x3E;&#x3C;/i&#x3E;</code></pre>
+                                </div>
+                                <p class="card-text">You can also add a class to change the icon size or to customize the icon. The class list available are listed below.</p>
+
+                                <h5 class="mt-4">SVG icon sizing</h5>
+                                <hr>
+                                <p class="card-text">To change icon size use <code>.icon-*</code> class. Available icon sizing class for svg icon are:</p>
+                                <div class="row no-gutters">
+                                    <div class="d-flex flex-column align-items-center p-2 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="activity" class="icon-xs"></i>
+                                        <div class="mt-2">.icon-xs</div>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center p-2 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="activity" class="icon-sm"></i>
+                                        <div class="mt-2">.icon-sm</div>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center p-2 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="activity" class="icon-nm"></i>
+                                        <div class="mt-2">.icon-nm</div>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center p-2 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="activity" class="icon-nm"></i>
+                                        <div class="mt-2">.icon-nm</div>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center p-2 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="activity" class="icon-md"></i>
+                                        <div class="mt-2">.icon-md</div>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center p-2 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="activity" class="icon-lg"></i>
+                                        <div class="mt-2">.icon-lg</div>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center p-2 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="activity" class="icon-xl"></i>
+                                        <div class="mt-2">.icon-xl</div>
+                                    </div>
+                                </div>
+
+                                <h5 class="mt-4">SVG icon theming</h5>
+                                <hr>
+                                <p class="card-text">To customize icon colors use <code>.fill-*</code> class. Available icon theming class for svg icon are:</p>
+                                <div class="row no-gutters">
+                                    <div class="d-flex flex-column align-items-center px-2 py-4 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="settings" class="icon-md"></i>
+                                        <div class="mt-2">default color</div>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center px-2 py-4 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="settings" class="icon-md fill-primary"></i>
+                                        <div class="mt-2">.fill-primary</div>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center px-2 py-4 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="settings" class="icon-md fill-secondary"></i>
+                                        <div class="mt-2">.fill-secondary</div>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center px-2 py-4 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="settings" class="icon-md fill-light"></i>
+                                        <div class="mt-2">.fill-light</div>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center px-2 py-4 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="settings" class="icon-md fill-dark"></i>
+                                        <div class="mt-2">.fill-dark</div>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center px-2 py-4 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="settings" class="icon-md fill-success"></i>
+                                        <div class="mt-2">.fill-success</div>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center px-2 py-4 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="settings" class="icon-md fill-danger"></i>
+                                        <div class="mt-2">.fill-danger</div>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center px-2 py-4 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="settings" class="icon-md fill-warning"></i>
+                                        <div class="mt-2">.fill-warning</div>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center px-2 py-4 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="settings" class="icon-md fill-info"></i>
+                                        <div class="mt-2">.fill-info</div>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center px-2 py-4 mr-2 border rounded justify-content-center mb-2">
+                                        <i data-feather="settings" class="icon-md fill-none"></i>
+                                        <div class="mt-2">.fill-none</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mt-4" id="feather-icons">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="mb-1 h3">Feather Icons</div>
+                                    <div class="small text-muted">Feather icons examples</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">This is just a preview of some feather icons, to see complete list of this icons please visit <a href="https://feathericons.com/">feathericons.com</a> website.</p>
+                                <div class="row row-eq-height row-cols-3 row-cols-md-6 justify-content-center">
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="activity"></i>
+                                            </div>
+                                            <div class="text-content">activity</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="airplay"></i>
+                                            </div>
+                                            <div class="text-content">airplay</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="alert-circle"></i>
+                                            </div>
+                                            <div class="text-content">alert-circle</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="alert-octagon"></i>
+                                            </div>
+                                            <div class="text-content">alert-octagon</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="alert-triangle"></i>
+                                            </div>
+                                            <div class="text-content">alert-triangle</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="align-center"></i>
+                                            </div>
+                                            <div class="text-content">align-center</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="align-justify"></i>
+                                            </div>
+                                            <div class="text-content">align-justify</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="align-center"></i>
+                                            </div>
+                                            <div class="text-content">align-left</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="align-right"></i>
+                                            </div>
+                                            <div class="text-content">align-right</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="anchor"></i>
+                                            </div>
+                                            <div class="text-content">anchor</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="aperture"></i>
+                                            </div>
+                                            <div class="text-content">aperture</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="archive"></i>
+                                            </div>
+                                            <div class="text-content">archive</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="arrow-up"></i>
+                                            </div>
+                                            <div class="text-content">arrow-up</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="arrow-up-right"></i>
+                                            </div>
+                                            <div class="text-content">arrow-up-right</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="arrow-right"></i>
+                                            </div>
+                                            <div class="text-content">arrow-right</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="arrow-down-right"></i>
+                                            </div>
+                                            <div class="text-content">arrow-down-right</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="arrow-down"></i>
+                                            </div>
+                                            <div class="text-content">arrow-down</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="arrow-down-left"></i>
+                                            </div>
+                                            <div class="text-content">arrow-down-left</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="arrow-left"></i>
+                                            </div>
+                                            <div class="text-content">arrow-left</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="arrow-up-left"></i>
+                                            </div>
+                                            <div class="text-content">arrow-up-left</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="arrow-up-circle"></i>
+                                            </div>
+                                            <div class="text-content">arrow-up-circle</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="arrow-right-circle"></i>
+                                            </div>
+                                            <div class="text-content">arrow-right-circle</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="arrow-down-circle"></i>
+                                            </div>
+                                            <div class="text-content">arrow-down-circle</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="arrow-left-circle"></i>
+                                            </div>
+                                            <div class="text-content">arrow-left-circle</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="at-sign"></i>
+                                            </div>
+                                            <div class="text-content">at-sign</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="award"></i>
+                                            </div>
+                                            <div class="text-content">award</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="calendar"></i>
+                                            </div>
+                                            <div class="text-content">calendar</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="camera"></i>
+                                            </div>
+                                            <div class="text-content">camera</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="book-open"></i>
+                                            </div>
+                                            <div class="text-content">book-open</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-wrapper">
+                                            <div class="content">
+                                                <i data-feather="box"></i>
+                                            </div>
+                                            <div class="text-content">box</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex my-3 justify-content-center">
+                                    <a href="https://feathericons.com/" target="_blank" class="btn btn-md btn-primary">See more examples</a>
+                                </div>
+                                <ul class="row row-eq-height row-cols-3 row-cols-md-6 featherIconAll list-unstyled list">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidenav -->
+                    <nav class="d-none d-xl-block col-xl-2">
+                        <ul class="sidenav-sticky">
+                            <li class="nav-item">
+                                <a href="#how-to-use">How to Use</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#feather-icons">Feather Icons</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </main>
+            
+            <!-- Content Footer -->
+            <%= htmlWebpackPlugin.options.footer %>
+        </section>
+    </div>
+    <!-- load JS scripts -->
+</body>
+</html>

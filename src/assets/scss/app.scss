@@ -1,0 +1,53 @@
+/*
+ * mwadmin » app.scss
+ * ==============================================
+ *
+ * Main app theme and styling modules are imported here
+ *
+ * @Author    : Muhammad Wafi <mwafiez@gmail.com>
+ * @Support   : [www.mwprolabs.com]
+ * @Created   : 15-02-2019
+ * @Modified  : 15-02-2019 23:03:51 pm
+ * ----------------------------------------------
+ * @Copyright (c) 2019 MWprolabs
+ * 
+ */
+
+// ==========================================================================
+// BASE style import
+// ==========================================================================
+@import "~rfs/scss";
+@import "./base/theme";
+@import "./base/colors";
+@import "./base/basic";
+@import "./base/mixins";
+@import "./base/layout";
+
+// ==========================================================================
+// Modules style import
+// ==========================================================================
+@import "./modules/alert";
+@import "./modules/avatar";
+@import "./modules/badge";
+@import "./modules/button";
+@import "./modules/card";
+@import "./modules/dropdown";
+@import "./modules/form";
+@import "./modules/list-group";
+@import "./modules/modal";
+@import "./modules/nav";
+@import "./modules/tabs";
+@import "./modules/pagination";
+@import "./modules/utilities";
+
+// ==========================================================================
+// Plugins style import
+// ==========================================================================
+@import "./plugins/smoothScrollbar";
+@import "./plugins/selectize";
+
+// ==========================================================================
+// Icons style import
+// ==========================================================================
+@import "./icons/featherIcon";
+@import "./icons/boxIcons";

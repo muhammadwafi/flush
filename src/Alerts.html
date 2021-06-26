@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= htmlWebpackPlugin.options.title %> | MWadmin</title>
+    <%= htmlWebpackPlugin.options.metaHeader %>
+</head>
+<body>
+    <div class="fl-app" id="app">
+        <!-- Sidebar -->
+        <%= htmlWebpackPlugin.options.sidebarNav %>
+
+        <!-- Content -->
+        <section class="fl-content">
+            <!-- Content Header -->
+            <%= htmlWebpackPlugin.options.contentHeader %>
+
+            <!-- Main Content -->
+            <main class="container-fluid" role="main">
+                <div class="row">
+                    <div class="col-xl-10">
+                        <!-- Basic Alert -->
+                        <div class="card" id="basic-alerts">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="mb-1 h3">Basic Alerts</div>
+                                    <div class="small text-muted">Basic badge with heading using <code>.badge</code> and <code>.badge-secondary</code> styling class</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-8">
+                                        <!-- Alert Danger -->
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <span class="alert-message">Simple alert danger. This alert is dismissable too!</span>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <!-- Alert Warning -->
+                                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                            <span class="alert-message">Simple alert warning. This alert is dismissable too!</span>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <!-- Alert Success -->
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                            <span class="alert-message">Simple alert success. This alert is dismissable too!</span>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <!-- Alert Info -->
+                                        <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                            <span class="alert-message">Simple alert info. This alert is dismissable too!</span>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <!-- Alert Secondary -->
+                                        <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+                                            <span class="alert-message">Simple alert secondary. This alert is dismissable too!</span>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <!-- Alert Dark -->
+                                        <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                                            <span class="alert-message">Simple alert dark. This alert is dismissable too!</span>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#alertStyle__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="alertStyle__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;!-- Alert Danger --&#x3E;
+&#x3C;div class=&#x22;alert alert-danger alert-dismissible fade show&#x22; role=&#x22;alert&#x22;&#x3E;
+    &#x3C;span class=&#x22;alert-message&#x22;&#x3E;Simple alert danger. This alert is dismissable too!&#x3C;/span&#x3E;
+    &#x3C;button type=&#x22;button&#x22; class=&#x22;close&#x22; data-dismiss=&#x22;alert&#x22; aria-label=&#x22;Close&#x22;&#x3E;
+        &#x3C;span aria-hidden=&#x22;true&#x22;&#x3E;&#x26;times;&#x3C;/span&#x3E;
+    &#x3C;/button&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Alert Warning --&#x3E;
+&#x3C;div class=&#x22;alert alert-warning alert-dismissible fade show&#x22; role=&#x22;alert&#x22;&#x3E;
+    &#x3C;span class=&#x22;alert-message&#x22;&#x3E;Simple alert warning. This alert is dismissable too!&#x3C;/span&#x3E;
+    &#x3C;button type=&#x22;button&#x22; class=&#x22;close&#x22; data-dismiss=&#x22;alert&#x22; aria-label=&#x22;Close&#x22;&#x3E;
+        &#x3C;span aria-hidden=&#x22;true&#x22;&#x3E;&#x26;times;&#x3C;/span&#x3E;
+    &#x3C;/button&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Alert Success --&#x3E;
+&#x3C;div class=&#x22;alert alert-success alert-dismissible fade show&#x22; role=&#x22;alert&#x22;&#x3E;
+    &#x3C;span class=&#x22;alert-message&#x22;&#x3E;Simple alert success. This alert is dismissable too!&#x3C;/span&#x3E;
+    &#x3C;button type=&#x22;button&#x22; class=&#x22;close&#x22; data-dismiss=&#x22;alert&#x22; aria-label=&#x22;Close&#x22;&#x3E;
+        &#x3C;span aria-hidden=&#x22;true&#x22;&#x3E;&#x26;times;&#x3C;/span&#x3E;
+    &#x3C;/button&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Alert Info --&#x3E;
+&#x3C;div class=&#x22;alert alert-info alert-dismissible fade show&#x22; role=&#x22;alert&#x22;&#x3E;
+    &#x3C;span class=&#x22;alert-message&#x22;&#x3E;Simple alert info. This alert is dismissable too!&#x3C;/span&#x3E;
+    &#x3C;button type=&#x22;button&#x22; class=&#x22;close&#x22; data-dismiss=&#x22;alert&#x22; aria-label=&#x22;Close&#x22;&#x3E;
+        &#x3C;span aria-hidden=&#x22;true&#x22;&#x3E;&#x26;times;&#x3C;/span&#x3E;
+    &#x3C;/button&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Alert Secondary --&#x3E;
+&#x3C;div class=&#x22;alert alert-secondary alert-dismissible fade show&#x22; role=&#x22;alert&#x22;&#x3E;
+    &#x3C;span class=&#x22;alert-message&#x22;&#x3E;Simple alert secondary. This alert is dismissable too!&#x3C;/span&#x3E;
+    &#x3C;button type=&#x22;button&#x22; class=&#x22;close&#x22; data-dismiss=&#x22;alert&#x22; aria-label=&#x22;Close&#x22;&#x3E;
+        &#x3C;span aria-hidden=&#x22;true&#x22;&#x3E;&#x26;times;&#x3C;/span&#x3E;
+    &#x3C;/button&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Alert Dark --&#x3E;
+&#x3C;div class=&#x22;alert alert-dark alert-dismissible fade show&#x22; role=&#x22;alert&#x22;&#x3E;
+    &#x3C;span class=&#x22;alert-message&#x22;&#x3E;Simple alert dark. This alert is dismissable too!&#x3C;/span&#x3E;
+    &#x3C;button type=&#x22;button&#x22; class=&#x22;close&#x22; data-dismiss=&#x22;alert&#x22; aria-label=&#x22;Close&#x22;&#x3E;
+        &#x3C;span aria-hidden=&#x22;true&#x22;&#x3E;&#x26;times;&#x3C;/span&#x3E;
+    &#x3C;/button&#x3E;
+&#x3C;/div&#x3E;
+</code></pre>
+</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Alert with Description -->
+                        <div class="card mt-3" id="alert-desc">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="mb-1 h3">Alert with Description</div>
+                                    <div class="small text-muted">Custom alerts with description and icon by adding <code>.alert-with-description</code> class and some element</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-8">
+                                        <!-- Alert Danger -->
+                                        <div class="alert alert-danger alert-dismissible alert-with-description fade show" role="alert">
+                                            <span class="alert-icon"><i data-feather="x-circle"></i></span>
+                                            <span class="alert-message h5">Error</span>
+                                            <span class="alert-description">Detailed description about error message</span>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true"><i data-feather="x" class="icon-sm"></i></span>
+                                            </button>
+                                        </div>
+                                        <!-- Alert Warning -->
+                                        <div class="alert alert-warning alert-dismissible alert-with-description fade show" role="alert">
+                                            <span class="alert-icon"><i data-feather="alert-circle"></i></span>
+                                            <span class="alert-message h5">Warning</span>
+                                            <span class="alert-description">Detailed description about warning message</span>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true"><i data-feather="x" class="icon-sm"></i></span>
+                                            </button>
+                                        </div>
+                                        <!-- Alert Success -->
+                                        <div class="alert alert-success alert-dismissible alert-with-description fade show" role="alert">
+                                            <span class="alert-icon"><i data-feather="check-circle"></i></span>
+                                            <span class="alert-message h5">Success</span>
+                                            <span class="alert-description">Detailed description about success message</span>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true"><i data-feather="x" class="icon-sm"></i></span>
+                                            </button>
+                                        </div>
+                                        <!-- Alert Info -->
+                                        <div class="alert alert-info alert-dismissible alert-with-description fade show" role="alert">
+                                            <span class="alert-icon"><i data-feather="info"></i></span>
+                                            <span class="alert-message h5">Info</span>
+                                            <span class="alert-description">Detailed description about info message</span>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true"><i data-feather="x" class="icon-sm"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#alertWithDesc__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="alertWithDesc__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;!-- Alert Danger --&#x3E;
+&#x3C;div class=&#x22;alert alert-danger alert-dismissible alert-with-description fade show&#x22; role=&#x22;alert&#x22;&#x3E;
+    &#x3C;span class=&#x22;alert-icon&#x22;&#x3E;&#x3C;i data-feather=&#x22;x-circle&#x22;&#x3E;&#x3C;/i&#x3E;&#x3C;/span&#x3E;
+    &#x3C;span class=&#x22;alert-message h5&#x22;&#x3E;Error&#x3C;/span&#x3E;
+    &#x3C;span class=&#x22;alert-description&#x22;&#x3E;Detailed description about error message&#x3C;/span&#x3E;
+    &#x3C;button type=&#x22;button&#x22; class=&#x22;close&#x22; data-dismiss=&#x22;alert&#x22; aria-label=&#x22;Close&#x22;&#x3E;
+        &#x3C;span aria-hidden=&#x22;true&#x22;&#x3E;&#x3C;i data-feather=&#x22;x&#x22; class=&#x22;icon-sm&#x22;&#x3E;&#x3C;/i&#x3E;&#x3C;/span&#x3E;
+    &#x3C;/button&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Alert Warning --&#x3E;
+&#x3C;div class=&#x22;alert alert-warning alert-dismissible alert-with-description fade show&#x22; role=&#x22;alert&#x22;&#x3E;
+    &#x3C;span class=&#x22;alert-icon&#x22;&#x3E;&#x3C;i data-feather=&#x22;alert-circle&#x22;&#x3E;&#x3C;/i&#x3E;&#x3C;/span&#x3E;
+    &#x3C;span class=&#x22;alert-message h5&#x22;&#x3E;Warning&#x3C;/span&#x3E;
+    &#x3C;span class=&#x22;alert-description&#x22;&#x3E;Detailed description about warning message&#x3C;/span&#x3E;
+    &#x3C;button type=&#x22;button&#x22; class=&#x22;close&#x22; data-dismiss=&#x22;alert&#x22; aria-label=&#x22;Close&#x22;&#x3E;
+        &#x3C;span aria-hidden=&#x22;true&#x22;&#x3E;&#x3C;i data-feather=&#x22;x&#x22; class=&#x22;icon-sm&#x22;&#x3E;&#x3C;/i&#x3E;&#x3C;/span&#x3E;
+    &#x3C;/button&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Alert Success --&#x3E;
+&#x3C;div class=&#x22;alert alert-success alert-dismissible alert-with-description fade show&#x22; role=&#x22;alert&#x22;&#x3E;
+    &#x3C;span class=&#x22;alert-icon&#x22;&#x3E;&#x3C;i data-feather=&#x22;check-circle&#x22;&#x3E;&#x3C;/i&#x3E;&#x3C;/span&#x3E;
+    &#x3C;span class=&#x22;alert-message h5&#x22;&#x3E;Success&#x3C;/span&#x3E;
+    &#x3C;span class=&#x22;alert-description&#x22;&#x3E;Detailed description about success message&#x3C;/span&#x3E;
+    &#x3C;button type=&#x22;button&#x22; class=&#x22;close&#x22; data-dismiss=&#x22;alert&#x22; aria-label=&#x22;Close&#x22;&#x3E;
+        &#x3C;span aria-hidden=&#x22;true&#x22;&#x3E;&#x3C;i data-feather=&#x22;x&#x22; class=&#x22;icon-sm&#x22;&#x3E;&#x3C;/i&#x3E;&#x3C;/span&#x3E;
+    &#x3C;/button&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Alert Info --&#x3E;
+&#x3C;div class=&#x22;alert alert-info alert-dismissible alert-with-description fade show&#x22; role=&#x22;alert&#x22;&#x3E;
+    &#x3C;span class=&#x22;alert-icon&#x22;&#x3E;&#x3C;i data-feather=&#x22;info&#x22;&#x3E;&#x3C;/i&#x3E;&#x3C;/span&#x3E;
+    &#x3C;span class=&#x22;alert-message h5&#x22;&#x3E;Info&#x3C;/span&#x3E;
+    &#x3C;span class=&#x22;alert-description&#x22;&#x3E;Detailed description about info message&#x3C;/span&#x3E;
+    &#x3C;button type=&#x22;button&#x22; class=&#x22;close&#x22; data-dismiss=&#x22;alert&#x22; aria-label=&#x22;Close&#x22;&#x3E;
+        &#x3C;span aria-hidden=&#x22;true&#x22;&#x3E;&#x3C;i data-feather=&#x22;x&#x22; class=&#x22;icon-sm&#x22;&#x3E;&#x3C;/i&#x3E;&#x3C;/span&#x3E;
+    &#x3C;/button&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Sidenav -->
+                    <nav class="d-none d-xl-block col-xl-2">
+                        <ul class="sidenav-sticky">
+                            <li class="nav-item">
+                                <a href="#basic-alerts">Basic Alerts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#alert-desc">Alert with Description</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </main>
+
+            <!-- Content Footer -->
+            <%= htmlWebpackPlugin.options.footer %>
+        </section>
+    </div>
+    <!-- load JS scripts -->
+</body>
+</html>

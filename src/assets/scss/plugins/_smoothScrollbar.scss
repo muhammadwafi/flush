@@ -1,0 +1,11 @@
+// smoothScrollbar.scss
+
+.scrollbar-track {
+    background: transparent!important;
+}
+.scrollbar-thumb {
+    left: auto!important;
+    right: 0!important;
+    width: 6px!important;
+    background: rgba(17, 17, 65, 0.185)!important;
+}

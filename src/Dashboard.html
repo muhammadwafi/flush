@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= htmlWebpackPlugin.options.title %> | MWadmin</title>
+    <%= htmlWebpackPlugin.options.metaHeader %>
+</head>
+<body>
+    <div class="fl-app" id="app">
+        <!-- Sidebar -->
+        <%= htmlWebpackPlugin.options.sidebarNav %>
+
+        <!-- Content -->
+        <section class="fl-content">
+            <!-- Content Header -->
+            <%= htmlWebpackPlugin.options.contentHeader %>
+
+            <!-- Main Content -->
+            <main class="container-fluid" role="main">
+                <h1>Hello World!</h1>
+                <h2>Hello World!</h2>
+                <h3>Hello World!</h3>
+                <h4>Hello World!</h4>
+                <h5>Hello World!</h5>
+                <h6>Hello World!</h6>
+            </main>
+
+            <!-- Content Footer -->
+            <%= htmlWebpackPlugin.options.footer %>
+        </section>
+    </div>
+    <!-- load JS scripts -->
+</body>
+</html>

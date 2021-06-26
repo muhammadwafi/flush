@@ -1,0 +1,63 @@
+// pagination.scss
+
+.pagination {
+    @include roundedCorners(25);
+    margin-bottom: 0;
+}
+.page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .55rem 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin: 0 2px;
+    line-height: 1.25;
+    font-weight: $font-weight-medium;
+    color: $dark;
+    background-color: transparent;
+    border: none!important;
+
+    @include hover-state {
+        color: $dark;
+        background-color: $dark-lt;
+    }
+
+    @include active-state {
+        color: $white;
+        background-color: $primary;
+        box-shadow: none!important;
+    }
+}
+.page-item {
+    &:first-child .page-link,
+    &:last-child .page-link {
+        border-radius: 50%;
+    }
+    &.active .page-link,
+    &.active .page-link:hover {
+        color: white;
+        background-color: $primary;
+    }
+}
+
+.pagination-sm {
+    .page-link {
+        width: 28px;
+        height: 28px;
+        margin: 0 1px;
+        line-height: 1;
+        font-size: 90%;
+        svg {
+            width: 28px;
+            height: 28px;
+        }
+    }
+    .page-item {
+        &:first-child .page-link,
+        &:last-child .page-link {
+            border-radius: 50%;
+        }
+    }
+}

@@ -1,0 +1,78 @@
+// shared.scss
+
+body {
+    font-family: $font-family;
+    font-size: $font-size-nm;
+    line-height: 1.25;
+    height: auto;
+    min-height: 100%;
+    position: relative;
+    color: $black;
+    background: $light;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: $primary;
+    position: relative;
+    &:hover,
+    &:focus {
+        color: $primary--hover;
+    }
+}
+
+p {
+    line-height: calc(1.5em + .2vw);
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $font-weight-semibold;
+}
+
+.h1,
+h1 {
+    @include font-size(2rem);
+}
+.h2,
+h2 {
+    @include font-size(1.75rem);
+}
+.h3,
+h3 {
+    @include font-size(1.5rem);
+}
+.h4,
+h4 {
+    @include font-size(1.25rem);
+}
+.h5,
+h5 {
+    @include font-size(1rem);
+}
+.h6,
+h6 {
+    @include font-size(0.815rem);
+}
+
+.article {
+    ul {
+        padding-left: calc(1.4em + 1.7vw);
+        list-style: none;
+        li {
+            line-height: calc(1.5em + .2vw);
+            word-break: break-word;
+            margin-bottom: calc((.25em + .25vw)/ 2);
+            &::before {
+                content: "\2022"; 
+                color: $primary;
+                @include font-size(1.25rem);
+                font-weight: bold;
+                display: inline-block;
+                width: 1.25em;
+                margin-left: -1.25em;
+            }
+        }
+    }
+}

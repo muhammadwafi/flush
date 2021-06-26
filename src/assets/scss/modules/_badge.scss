@@ -1,0 +1,21 @@
+// badge.scss
+
+.badge {
+    @include roundedCorners(4);
+    padding: .25em .45em;
+    font-weight: $font-weight-medium;
+    &.badge-pill {
+        @include roundedCorners(10);    
+    }
+}
+@each $color, $values in $theme-colors {
+    .badge-#{$color} {
+        @if ($color == "light") {
+            background: $values;
+            color: $dark;
+        } @else {
+            background: $values;
+            color: $white;
+        }
+    }
+}

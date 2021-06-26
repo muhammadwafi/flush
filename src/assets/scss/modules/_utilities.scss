@@ -1,0 +1,253 @@
+// utilities.scss
+
+// ---
+// Background & Text
+// ---
+@each $color, $values in $theme-colors {
+    // Background color
+    .bg-#{$color} {
+        background: $values !important;
+    }
+    // Text color
+    .text-#{$color} {
+        color: $values !important;
+    }
+    // Border color
+    .border-#{$color} {
+        border-color: $values !important;
+    }
+}
+
+.text-muted {
+    color: $text-muted!important;
+}
+.text-white {
+    .text-muted {
+        color: rgba(255, 255, 255, 0.85)!important;
+    }
+    a {
+        color: rgba(255, 255, 255, 0.85);
+        @include hover-state {
+            color: $white!important;
+        }
+    }
+}
+
+// ---
+// Font Size
+// ---
+@each $label, $values in $font-sizing {
+    .fs-#{$label} {
+        font-size: $values !important;
+    }
+}
+.small, small {
+    font-size: 82.5%;
+}
+
+// ---
+// Page Header
+// ---
+.page-header {
+    padding: 1.25rem .25rem;
+    .heading {
+        font-weight: $font-weight-semibold;
+        margin-bottom: .15rem;
+    }
+    .sub-heading {
+        font-size: 80%;
+        color: $text-muted;
+    }
+}
+
+// ---
+// Others
+// ---
+.group {
+    >.btn,
+    >[class*=col-],
+    >.card {
+        margin-bottom: .5rem;
+    }
+}
+code {
+    font-size: 92.5%;
+    color: #112be6;
+    background: #e6f0ff;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+pre { 
+    margin: 0; 
+    font-size: 92.5%;
+}
+pre code {
+    font-size: 0.85rem!important;
+    margin: 0;
+}
+.row.no-gutters {
+    >[class*=col-] {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    margin-right: 0;
+    margin-left: 0;
+}
+.hljs {
+    max-height: 400px;
+    padding: 1.5rem;
+    background: #f9f9fb;
+    @include roundedCorners(14);
+}
+.fl-codebox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__btn {
+        position: relative;
+        padding: .5rem 0;
+        margin: 1rem 0 0 0;
+        text-align: center;
+        border-width: 1px 0 0;
+        border-color: rgba($black, .075);
+        border-style: solid;
+        background-color: transparent;
+        font-size: $font-size-sm;
+        outline: none;
+        width: 100%;
+        font-weight: $font-weight-medium;
+        color: $text-muted;
+        &:hover,
+        &:focus,
+        &:active {
+            outline: none;
+            box-shadow: none;
+            color: $primary;
+        }
+        i, svg {
+            margin-right: .15rem;
+        }
+    }
+}
+
+.fl-clipboard {
+    position: relative;
+    float: right;
+    &__btn {
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        z-index: 10;
+        display: block;
+        padding: .25rem .5rem;
+        font-size: 75%;
+        border: 0;
+        color: rgba($black, .5);
+        background-color: rgba($black, .05);
+        cursor: pointer;
+        @include roundedCorners(6);
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $primary;
+            color: $white;
+            outline: none;
+            box-shadow: none;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .row.block-wrapper {
+        >[class*=col-]:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+}
+button.close {
+    position: relative;
+    &:hover,
+    &:focus,
+    &:active {
+        color: inherit;
+        outline: none;
+    }
+}
+.close {
+    width: 24px !important;
+    height: 24px !important;
+    padding: 0 2px !important;
+    border-radius: 50%;
+    outline: none;
+    svg {
+        height: 14px;
+        width: 14px;
+    }
+}
+.icon-wrapper {
+    @include roundedCorners(14);
+    height: 150px;
+    background-color: $light-lt;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $border-color;
+    margin-bottom: .5rem;
+    .content {
+        @include roundedCorners(14);
+        border-bottom: 1px solid $border-color;
+        background-color: $white;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        svg {
+            width: 28px;
+            height: 28px;
+        }
+        i {
+            font-size: 2rem;
+        }
+    }
+    .text-content {
+        display: flex;
+        padding: 8px 12px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    &:hover {
+        border-color: $primary;
+        .content {
+            border-color: $primary;
+        }
+    }
+}
+
+// Blur
+.blur {
+    background-color: rgba(168,197,255,0.25);
+    -webkit-backdrop-filter: saturate(125%) blur(10px);
+    -moz-backdrop-filter: saturate(125%) blur(10px);
+    -ms-backdrop-filter: saturate(125%) blur(10px);
+    backdrop-filter: saturate(125%) blur(10px);
+}
+.elevate {
+    box-shadow: 0px 27px 63px -24px $shadow-color;
+}
+
+$tiles: 5;
+.box {
+    width: auto;
+    height: 5rem;
+    &-light {
+        background: $light;
+    }
+    @for $i from 1 through $tiles {
+        $n: 5*$i;
+        &-light-shade-#{$n} {
+            background: darken($light, $n);
+        }
+    }
+}

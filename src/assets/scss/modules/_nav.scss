@@ -1,0 +1,304 @@
+// nav.scss
+
+
+/*----------  Navigation  ----------*/
+.nav-link {
+    @include roundedCorners(8);
+    padding: .5rem .75rem;
+    transition: background .15s ease-in-out;
+    color: $black;
+    background: transparent;
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus-within,
+    &.active {
+        color: $primary;
+        background: $light--hover;
+        svg {
+            color: $primary;
+            fill: $primary-lt;
+        }
+    }
+
+    &.navbar-icon {
+        @include roundedCorners(40);
+        width: 38px;
+        padding: 5px;
+        line-height: 1;
+        height: 38px;
+        border: none;
+        position: relative;
+        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+            font-size: 1.35rem;
+        }
+    }
+
+    // ---
+    // Nav Content
+    // ---
+    .nav-content {
+        display: flex;
+        align-items: center;
+        flex: 1;
+
+        // ---
+        // Nav Content Icon
+        // ---
+        .nav-icon {
+            margin-right: .35rem;
+            margin-left: -.35rem;
+            font-size: 1.35rem;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+        
+        // ---
+        // Nav Content Text
+        // ---
+        .nav-text {
+            position: relative
+        }
+    }
+}
+
+.nav-divider {
+    padding: 1rem 1.25rem .35rem;
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+    color: $text-muted--hover;
+    letter-spacing: 1px;
+}
+
+/*----------  Sidebar Nav  ----------*/
+.fl-sidebar__nav {
+    min-height: 100%!important;
+
+    .nav-item {
+        position: relative;
+        margin: .125rem .5rem;
+    }
+    
+    .has-dropdown > .nav-link {
+        &::before,
+        &::after {
+            position: absolute;
+            width: 6px;
+            height: .1rem;
+            background: $dark;
+            border-radius: 3px;
+            -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1),top .3s cubic-bezier(.645,.045,.355,1),-webkit-transform .3s cubic-bezier(.645,.045,.355,1);
+            transition: all .3s cubic-bezier(.645,.045,.355,1),top .3s cubic-bezier(.645,.045,.355,1),-webkit-transform .3s cubic-bezier(.645,.045,.355,1);
+            transition: all .3s cubic-bezier(.645,.045,.355,1),transform .3s cubic-bezier(.645,.045,.355,1),top .3s cubic-bezier(.645,.045,.355,1);
+            transition: all .3s cubic-bezier(.645,.045,.355,1),transform .3s cubic-bezier(.645,.045,.355,1),top .3s cubic-bezier(.645,.045,.355,1),-webkit-transform .3s cubic-bezier(.645,.045,.355,1);
+            content: '';
+            right: .85rem;
+            margin-top: .1rem;
+        }
+        &::before {
+            -webkit-transform: rotate(-45deg) translateX(2px);
+            transform: rotate(-45deg) translateX(2px);
+        }
+        &::after {
+            -webkit-transform: rotate(45deg) translateX(-2px);
+            transform: rotate(45deg) translateX(-2px);
+        }
+        &:hover,
+        &:focus,
+        &.active {
+            &::before,
+            &::after {
+                background: $primary;
+            }
+        }
+        &.active {
+            &::before,
+            &::after {
+                margin-top: 0;
+            }
+            &::before {
+                -webkit-transform: rotate(45deg) translateX(2px);
+                transform: rotate(45deg) translateX(2px);
+            }
+            &::after {
+                -webkit-transform: rotate(-45deg) translateX(-2px);
+                transform: rotate(-45deg) translateX(-2px);
+            }
+        }
+    }
+    
+
+    // ---
+    // Nav link
+    // ---
+    .nav-link {
+        @include roundedCorners(10);
+        color: $black;
+        padding: .15rem .75rem;
+        display: flex;
+        align-items: center;
+        min-height: 36px;
+        position: relative;        
+        &:hover {
+            background: $light--hover;
+        }        
+        &:focus,
+        &:active,
+        &.active {
+            background: $light--hover;
+            color: $primary;
+        }
+    }
+    .nav-icon {
+        width: 28px;
+        margin-left: -.45rem;
+    }
+}
+
+.sub-menu {
+    display: none;
+    margin-top: 2px;
+    padding: 0;
+    list-style: none!important;
+    position: relative;
+
+    // ---
+    // Sub Nav Item
+    // ---
+    .nav-item {
+        position: relative;
+        margin: 0;
+    }
+
+    // ---
+    // Sub Nav Link
+    // ---
+    .nav-link {
+        @include roundedCorners(8);
+        height: 32px;
+        position: relative;
+        min-height: 32px;
+        padding: .15rem .5rem .15rem 2.5rem;
+
+        &::before {
+            z-index: 1;
+            content: "";
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            margin-left: -1.35rem;
+            margin-top: 1px;
+            border-radius: 50%;
+            background: $light-30;
+        }
+        &:hover,
+        &:focus,
+        &.active {
+            background: transparent;
+            color: $primary;
+            &::before {
+                background: $primary;
+            }
+        }
+        &:hover:not(.active),
+        &:focus:not(.active) {
+            border-color: $primary-lt;
+        }
+        
+        // ---
+        // Sub Nav Icon
+        // ---
+        .nav-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: .25rem;
+            font-size: 1rem;
+        }
+    }
+
+}
+
+// sidebar-fold
+// .fold .sidebar-nav {
+//     .nav {
+//         align-items: center;
+//         justify-content: center;
+//     }
+//     li.nav-divider {
+//         visibility: hidden;
+//     }
+//     .nav-item {
+//         margin-left: 0;
+//         margin-right: 0;
+//     }
+//     .nav-link {
+//         width: 40px;
+//         height: 40px;
+//         padding: 0;
+//         @include roundedCorners(40);
+//         .nav-content {
+//             justify-content: center;
+//         }
+//         .nav-text {display: none}
+//         .nav-icon {
+//             font-size: 1.25rem;
+//             margin: 0;
+//             width: auto;
+//         }
+//     }
+//     .has-dropdown > .nav-link::after {
+//         display: none;
+//     }
+// }
+
+/*----------  Nav User  ----------*/
+.navbar-user {
+    padding: .25rem .45rem .25rem .25rem;
+    @include roundedCorners(50);
+    .nav-text {
+        @include ellipsis();
+        max-width: 90px;
+    }
+    .avatar-wrapper {
+        margin-right: .5rem;
+    }
+}
+@media(max-width: 991.98px) {
+    .navbar-user {
+        @include roundedCorners(30);
+        padding: .25rem;
+        .nav-text {
+            display: none;
+            visibility: hidden;
+        }
+        .avatar-wrapper {
+            margin: 0;
+        }
+    }
+}
+
+.sidenav-sticky {
+    list-style: none;
+    padding-left: .5rem;
+    z-index: 1;
+    >li>a {
+        @include roundedCorners(8);
+        display: block;
+        padding: 3px 8px;
+        margin-bottom: .15rem;
+        color: $dark;
+        font-size: 85%;
+        position: relative;
+        &:hover, 
+        &:focus, 
+        &:active {
+            background: $dark-lt;
+            text-decoration: none;
+        }
+    }
+}

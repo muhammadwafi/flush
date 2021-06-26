@@ -1,0 +1,37 @@
+// list-group.scss
+.list-group {
+    @include roundedCorners(8);
+    // List group item
+    &-item {
+        display: flex;
+        &.active {
+            color: $white;
+            background: $primary;
+            border-color: $primary;
+        }
+        @include disabled {
+            color: $text-muted;
+        }
+        .title {
+            font-weight: $font-weight-medium;
+        }
+        >* {
+            width: 100%;
+        }
+    }
+    // List group item action
+    a.list-group-item,
+    &-item-action {
+        &:hover {
+            text-decoration: none;
+            background: $light--hover;
+        }
+        &:active,
+        &.active,
+        &:focus {
+            color: $white;
+            background: $primary;
+            border-color: $primary;
+        }
+    }
+}

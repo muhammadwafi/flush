@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= htmlWebpackPlugin.options.title %> | MWadmin</title>
+    <%= htmlWebpackPlugin.options.metaHeader %>
+</head>
+<body>
+    <div class="fl-app" id="app">
+        <!-- Sidebar -->
+        <%= htmlWebpackPlugin.options.sidebarNav %>
+
+        <!-- Content -->
+        <section class="fl-content">
+            <!-- Content Header -->
+            <%= htmlWebpackPlugin.options.contentHeader %>
+
+            <!-- Main Content -->
+            <main class="container-fluid" role="main">
+                <div class="row">
+                    <div class="col-xl-10">
+                        <!-- Basic -->
+                        <div class="card" id="pagination">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="mb-1 h3">Tabs</div>
+                                    <div class="small text-muted">Pagination nav using <code>.pagination</code> class on unordered lists element</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-8">
+                                        <ul class="nav fl-tabs" id="myTab" data-swipe="control" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"role="tab" aria-controls="home" aria-selected="true">Home</a>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile"role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact"role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content mt-3" id="myTabContent" data-swipe="area">
+                                            <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                                aria-labelledby="home-tab">
+                                                <h4>Home</h4>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                                                    with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="profile" role="tabpanel"
+                                                aria-labelledby="profile-tab">
+                                                <h4>Profile</h4>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                                                    with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="contact" role="tabpanel"
+                                                aria-labelledby="contact-tab">
+                                                <h4>Contact</h4>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                                                    with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#paginationBasic__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="paginationBasic__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">
+</code></pre>
+</div>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h5 class="card-title mb-1">Pills</h5>
+                                    <p class="small text-muted">Adding image overlay inside <code>.card-img-wrapper</code> class using <code>.card-img-overlay</code></p>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-md-8">
+                                        <ul class="nav nav-pills" id="navPills" role="tablist" data-swipe="control">
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#navHome"role="tab" aria-controls="home" aria-selected="true">Home</a>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#navProfile"role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#navContact"role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content mt-3" id="navPillsContent" data-swipe="area">
+                                            <div class="tab-pane fade show active" id="navHome" role="tabpanel"
+                                                aria-labelledby="home-tab">
+                                                <h4>Home</h4>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                                                    with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="navProfile" role="tabpanel"
+                                                aria-labelledby="profile-tab">
+                                                <h4>Profile</h4>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                                                    with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="navContact" role="tabpanel"
+                                                aria-labelledby="contact-tab">
+                                                <h4>Contact</h4>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                                                    with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidenav -->
+                    <nav class="d-none d-xl-block col-xl-2">
+                        <ul class="sidenav-sticky">
+                            <li class="nav-item">
+                                <a href="#pagination">Pagination</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#pagination-small">Pagination Small</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </main>
+            
+            <!-- Content Footer -->
+            <%= htmlWebpackPlugin.options.footer %>
+        </section>
+    </div>
+    <!-- load JS scripts -->
+</body>
+</html>

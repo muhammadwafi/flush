@@ -1,0 +1,301 @@
+// mixins.scss
+// @import "compass/css3";
+
+// =============================================================================
+// HARDWARE ACCELERATION - Hardware acceleration for fast animations mixins.
+// example: @include harware();
+// =============================================================================
+@mixin hardware($backface: true, $perspective: 1000) {
+    @if $backface {
+        backface-visibility: hidden;
+    }
+    perspective: $perspective;
+}
+
+// =============================================================================
+// PSEUDO ELEMENTS - Pseudo elements like ::before and ::after mixins.
+// example: @include pseudo();
+// =============================================================================
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+// =============================================================================
+// BUTTON STYLES - Button style variant mixin.
+// example: @include button-styles(#aaa, #000, #bbb);
+// =============================================================================
+@mixin button-styles($background, $color, $hover-bg, $hover-color:false, $pressed:false) {
+	background: $background;
+	border-color: $background;
+	color: $color!important;
+	@include hover-state {
+		background: $hover-bg;
+		border-color: $hover-bg;
+		box-shadow: 0 2px 1px -1px rgba($pressed, 0.5), 
+						0 3px 6px rgba($pressed, 0.25)!important;
+		@if($hover-color) {
+			color: $hover-color;
+		}
+	}
+	@if($pressed) {
+		@include active-state {
+			background: $pressed!important;
+			border-color: $pressed!important;
+			box-shadow: none!important;
+			@if($hover-color) {
+				color: $hover-color;
+			}
+		}
+	}
+	@include disabled {
+		background: $background;
+		border-color: $background;
+	}
+	.show > &.dropdown-toggle {
+		background: $hover-bg;
+		border-color: $hover-bg;
+		@if($hover-color) {
+			color: $hover-color;
+		}
+	}
+}
+
+// =============================================================================
+// BUTTON OUTLINE STYLES - Button outline style variant mixin.
+// example: @include button-styles(#000, #aaa, #fff);
+// =============================================================================
+@mixin button-outline-styles($color, $hover-bg, $hover-color, $pressed:false) {
+	border-color: $color;
+	color: $color!important;
+	@include hover-state {
+		background: $hover-bg;
+		border-color: $hover-bg;
+		color: $hover-color!important;
+		box-shadow: 0 2px 1px -1px rgba($pressed, 0.5), 
+						0 3px 6px rgba($pressed, 0.25)!important;
+	}
+	@if($pressed) {
+		@include active-state {
+			background: $pressed!important;
+			border-color: $pressed!important;
+			box-shadow: none!important;
+			@if($hover-color) {
+				color: $hover-color!important;
+			}
+		}
+	}
+	@include disabled {
+		border-color: $color;
+	}
+	.show > &.dropdown-toggle {
+		background: $hover-bg;
+		border-color: $hover-bg;
+		color: $hover-color!important;
+	}
+}
+
+// =============================================================================
+// HOVER FOCUS & DISABLED- Hover and Focusing elemen mixin.
+// example: @include hover-state{ background-color: #aaa; };
+// =============================================================================
+@mixin hover-state {
+	&:not(:disabled):not(.disabled) {
+		&:hover {
+			@content;
+		}
+	}
+}
+@mixin active-state {
+	&:not(:disabled):not(.disabled) {
+		&.active,
+		&.focus,
+		&.focused,
+		&:active,
+		&:focus {
+			@content;
+		}
+	}
+}
+@mixin disabled {
+	&:disabled,
+	&.disabled {
+		@content;
+	}
+}
+
+// =============================================================================
+// HIDDEN - Hide from both screenreader and browsers.
+// example: @include hidden();
+// =============================================================================
+@mixin hidden {
+	display: none;
+	visibility: hidden;
+}
+
+// =============================================================================
+// TEXT ELLIPSIS - Ellipsis mixins.
+// example: @include ellipsis();
+// =============================================================================
+@mixin ellipsis() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// =============================================================================
+// TRANSFORM - Transform mixins.
+// example: @include rotate(10);
+//          @include translate(50px, 100px);
+//          ...
+// =============================================================================
+@mixin transform($origin) {
+	transform-origin: $origin;
+}
+// Transform rotate
+@mixin rotate($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+// Transform scale
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+// Transform translate
+@mixin translate($x, $y) {
+    @include transform(translate($x, $y));
+}
+// Transform translate x pos only
+@mixin translateX($x) {
+    @include transform(translateX($x));
+}
+// Transform translate y pos only
+@mixin translateY($y) {
+    @include transform(translateY($y));
+}
+// Transform translate y pos only
+@mixin translateZ($z) {
+    @include transform(translateZ($z));
+}
+// Transform skew
+@mixin skew($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
+// =============================================================================
+// TRANSITION - Transition mixins.
+// example: @include transition(width, height .15s ease-in-out);
+//          ...
+// =============================================================================
+@mixin transition($transitions...) {
+	$unfoldedTransitions: ();
+	@each $transition in $transitions {
+		$unfoldedTransitions: append($unfoldedTransitions, unfoldTransition($transition), comma);
+	}
+	transition: $unfoldedTransitions;
+}
+
+@function unfoldTransition ($transition) {
+	// Default values
+	$property: all;
+	$duration: .2s;
+	$easing: null; // Browser default is ease, which is what we want
+	$delay: null; // Browser default is 0, which is what we want
+	$defaultProperties: ($property, $duration, $easing, $delay);
+
+	// Grab transition properties if they exist
+	$unfoldedTransition: ();
+
+	@for $i from 1 through length($defaultProperties) {
+		$p: null;
+
+		@if $i <=length($transition) {
+			$p: nth($transition, $i)
+		}
+
+		@else {
+			$p: nth($defaultProperties, $i)
+		}
+
+		$unfoldedTransition: append($unfoldedTransition, $p);
+	}
+
+	@return $unfoldedTransition;
+}
+
+// =============================================================================
+// ROUNDED CORNERS - Border radius mixins.
+// example: @include borderRadius(10);
+// =============================================================================
+@mixin roundedCorners($size) {
+	border-radius: $size + px;
+} 
+// Rounded Corners Top Only
+@mixin roundedTop($size) {
+	border-radius: $size + px $size + px 0 0;
+} 
+// Rounded Corner Top Left Only
+@mixin roundedTopLeft($size) {
+	border-top-left-radius: $size + px;
+} 
+// Rounded Corner Top Right Only
+@mixin roundedTopRight($size) {
+	border-top-right-radius: $size + px;
+} 
+// Rounded Corners Bottom Only
+@mixin roundedBottom($size) {
+	border-radius: 0 0 $size + px $size + px;
+} 
+// Rounded Corner Bottom Left Only
+@mixin roundedBottomLeft($size) {
+	border-bottom-left-radius: $size + px;
+} 
+// Rounded Corner Bottom Right Only
+@mixin roundedBottomRight($size) {
+	border-bottom-right-radius: $size + px;
+} 
+// Rounded Corners Left Only
+@mixin roundedLeft($size) {
+	border-top-left-radius: $size + px;
+	border-bottom-left-radius: $size + px;
+} 
+// Rounded Corners Right Only
+@mixin roundedRight($size) {
+	border-top-right-radius: $size + px;
+	border-bottom-right-radius: $size + px;
+}
+// =============================================================================
+// ZINDEX - z-index mixins.
+// example: @include zindex(10);
+// 			generates z-index for nth-child(1) - nth-child(10)
+// =============================================================================
+@mixin zindex($n: 15) {
+	@for $i from 1 through $n {
+		$id: $n - $i;
+		&:nth-child(#{$i}) {
+			z-index: #{$id};
+		}
+	}
+}
+// =============================================================================
+// BOX - Shorthand for width and height.
+// example: @include box(200px, 250px);
+// =============================================================================
+@mixin box($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+// =============================================================================
+// TINT - Slightly lighten a color.
+// example: tint(#BADA55, 42%);
+// =============================================================================
+@function tint($color, $percentage) {
+	@return mix(white, $color, $percentage);
+}
+
+// =============================================================================
+// SHADE - shade(#663399, 42%);
+// =============================================================================
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= htmlWebpackPlugin.options.title %> | MWadmin</title>
+    <%= htmlWebpackPlugin.options.metaHeader %>
+</head>
+<body>
+    <div class="fl-app" id="app">
+        <!-- Sidebar -->
+        <%= htmlWebpackPlugin.options.sidebarNav %>
+
+        <!-- Content -->
+        <section class="fl-content">
+            <!-- Content Header -->
+            <%= htmlWebpackPlugin.options.contentHeader %>
+
+            <!-- Main Content -->
+            <main class="container-fluid" role="main">
+                <div class="row">
+                    <div class="col-xl-10">
+                        <!-- Basic -->
+                        <div class="card" id="basic">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="mb-1 h3">Avatars</div>
+                                    <div class="small text-muted">Basic avatar using <code>.avatar</code> class.</div>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="row no-gutters align-items-end justify-content-md-center">
+                                    <div class="avatar-wrapper mb-2 mr-2" data-toggle="tooltip" 
+                                    title=".avatar-xl">
+                                        <img src="./assets/images/fl-avatar.svg" class="avatar avatar-xl" alt="xtra large" title="avatar-xl">
+                                    </div>
+                                    <div class="avatar-wrapper mb-2 mr-2" data-toggle="tooltip" 
+                                    title=".avatar-lg">
+                                        <img src="./assets/images/fl-avatar.svg" class="avatar avatar-lg" alt="large" title="avatar-lg">
+                                    </div>
+                                    <div class="avatar-wrapper mb-2 mr-2" data-toggle="tooltip" 
+                                    title=".avatar-md">
+                                        <img src="./assets/images/fl-avatar.svg" class="avatar avatar-md" alt="medium" title="avatar-md">
+                                    </div>
+                                    <div class="avatar-wrapper mb-2 mr-2" data-toggle="tooltip" 
+                                    title=".avatar">
+                                        <img src="./assets/images/fl-avatar.svg" class="avatar" alt="default" title="default size">
+                                    </div>
+                                    <div class="avatar-wrapper mb-2 mr-2" data-toggle="tooltip" 
+                                    title=".avatar-sm">
+                                        <img src="./assets/images/fl-avatar.svg" class="avatar avatar-sm" alt="small" title="avatar-sm">
+                                    </div>
+                                    <div class="avatar-wrapper mb-2 mr-2" data-toggle="tooltip" 
+                                    title=".avatar-xs">
+                                        <img src="./assets/images/fl-avatar.svg" class="avatar avatar-xs" alt="xtra small" title="avatar-xs">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#avatarBasic__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="avatarBasic__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;!-- Avatar Extra Large --&#x3E;
+&#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+    &#x3C;img src=&#x22;...Your image url...&#x22; class=&#x22;avatar avatar-xl&#x22; alt=&#x22;xtra large&#x22; title=&#x22;avatar-xl&#x22;&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Avatar Large --&#x3E;
+&#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+    &#x3C;img src=&#x22;...Your image url...&#x22; class=&#x22;avatar avatar-lg&#x22; alt=&#x22;large&#x22; title=&#x22;avatar-lg&#x22;&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Avatar Medium --&#x3E;
+&#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+    &#x3C;img src=&#x22;...Your image url...&#x22; class=&#x22;avatar avatar-md&#x22; alt=&#x22;medium&#x22; title=&#x22;avatar-md&#x22;&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Avatar size default --&#x3E;
+&#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+    &#x3C;img src=&#x22;...Your image url...&#x22; class=&#x22;avatar&#x22; alt=&#x22;default&#x22; title=&#x22;default size&#x22;&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Avatar Small --&#x3E;
+&#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+    &#x3C;img src=&#x22;...Your image url...&#x22; class=&#x22;avatar avatar-sm&#x22; alt=&#x22;small&#x22; title=&#x22;avatar-sm&#x22;&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Avatar Extra Small --&#x3E;
+&#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+    &#x3C;img src=&#x22;...Your image url...&#x22; class=&#x22;avatar avatar-xs&#x22; alt=&#x22;xtra small&#x22; title=&#x22;avatar-xs&#x22;&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+</div>
+                            </div>
+
+                            <!-- Avatar Initial Letter -->
+                            <div class="card-body mt-4" id="initial-letter">
+                                <h5 class="card-title mb-1">Avatar with Initial Letter</h5>
+                                <p class="small text-muted">Firstname and lastname initial in avatar instead of using <code>img</code> tag.</p>
+                                <div class="row no-gutters align-items-end justify-content-md-center">
+                                    <!-- Avatar Initial Extra Large -->
+                                    <div class="avatar-wrapper mb-2 mr-2" data-toggle="tooltip" 
+                                    title="extra large">
+                                        <div class="avatar avatar-xl"><span class="initial">MW</span></div>
+                                    </div>
+                                    <!-- Avatar Initial Large -->
+                                    <div class="avatar-wrapper mb-2 mr-2" data-toggle="tooltip" 
+                                    title="large">
+                                        <div class="avatar avatar-lg"><span class="initial">MW</span></div>
+                                    </div>
+                                    <!-- Avatar Initial Medium -->
+                                    <div class="avatar-wrapper mb-2 mr-2" data-toggle="tooltip" 
+                                    title="medium">
+                                        <div class="avatar avatar-md"><span class="initial">MW</span></div>
+                                    </div>
+                                    <!-- Avatar Initial Default -->
+                                    <div class="avatar-wrapper mb-2 mr-2" data-toggle="tooltip" 
+                                    title="default">
+                                        <div class="avatar"><span class="initial">MW</span></div>
+                                    </div>
+                                    <!-- Avatar Initial Small -->
+                                    <div class="avatar-wrapper mb-2 mr-2" data-toggle="tooltip" 
+                                    title="small">
+                                        <div class="avatar avatar-sm"><span class="initial">MW</span></div>
+                                    </div>
+                                    <!-- Avatar Initial Extra Small -->
+                                    <div class="avatar-wrapper mb-2 mr-2" data-toggle="tooltip" 
+                                    title="extra small">
+                                        <div class="avatar avatar-xs"><span class="initial">MW</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#avatarInitial__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="avatarInitial__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;!-- Avatar Initial Extra Large --&#x3E;
+&#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+    &#x3C;div class=&#x22;avatar avatar-xl&#x22;&#x3E;&#x3C;span class=&#x22;initial&#x22;&#x3E;MW&#x3C;/span&#x3E;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Avatar Initial Large --&#x3E;
+&#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+    &#x3C;div class=&#x22;avatar avatar-lg&#x22;&#x3E;&#x3C;span class=&#x22;initial&#x22;&#x3E;MW&#x3C;/span&#x3E;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Avatar Initial Medium --&#x3E;
+&#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+    &#x3C;div class=&#x22;avatar avatar-md&#x22;&#x3E;&#x3C;span class=&#x22;initial&#x22;&#x3E;MW&#x3C;/span&#x3E;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Avatar Initial Default --&#x3E;
+&#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+    &#x3C;div class=&#x22;avatar&#x22;&#x3E;&#x3C;span class=&#x22;initial&#x22;&#x3E;MW&#x3C;/span&#x3E;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Avatar Initial Small --&#x3E;
+&#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+    &#x3C;div class=&#x22;avatar avatar-sm&#x22;&#x3E;&#x3C;span class=&#x22;initial&#x22;&#x3E;MW&#x3C;/span&#x3E;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Avatar Initial Extra Small --&#x3E;
+&#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+    &#x3C;div class=&#x22;avatar avatar-xs&#x22;&#x3E;&#x3C;span class=&#x22;initial&#x22;&#x3E;MW&#x3C;/span&#x3E;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+</div>
+                            </div>
+
+                        </div>
+
+                        <!-- Avatar Group -->
+                        <div class="card mt-3" id="avatar-group">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="mb-1 h3">Avatar Group</div>
+                                    <div class="small text-muted">Stacked group of avatar using <code>.avatar-group</code> class.</div>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-4">
+                                        <!-- Medium -->
+                                        <div class="w-100 my-3">
+                                            <ul class="avatar-group">
+                                                <li class="avatar-wrapper">
+                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="John Doe">
+                                                        <img src="./assets/images/fl-avatar.svg" class="avatar avatar-md" alt="avatar">
+                                                    </a>
+                                                </li>
+                                                <li class="avatar-wrapper">
+                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="Jeni Doe">
+                                                        <img src="./assets/images/fl-avatar.svg" class="avatar avatar-md" title="John">
+                                                    </a>
+                                                </li>
+                                                <li class="avatar-wrapper">
+                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="Marquez">
+                                                        <img src="./assets/images/fl-avatar.svg" class="avatar avatar-md" alt="avatar">
+                                                    </a>
+                                                </li>
+                                                <li class="avatar-wrapper">
+                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="Show more">
+                                                        <div class="avatar avatar-md"><span class="initial">16+</span></div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- Default -->
+                                        <div class="w-100 mb-3">
+                                            <ul class="avatar-group">
+                                                <li class="avatar-wrapper">
+                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="John Doe">
+                                                        <img src="./assets/images/fl-avatar.svg" class="avatar" alt="avatar">
+                                                    </a>
+                                                </li>
+                                                <li class="avatar-wrapper">
+                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="Jeni Doe">
+                                                        <img src="./assets/images/fl-avatar.svg" class="avatar" alt="avatar" title="John">
+                                                    </a>
+                                                </li>
+                                                <li class="avatar-wrapper">
+                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="Marquez">
+                                                        <img src="./assets/images/fl-avatar.svg" class="avatar" alt="avatar">
+                                                    </a>
+                                                </li>
+                                                <li class="avatar-wrapper">
+                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="Show more">
+                                                        <div class="avatar"><span class="initial">16+</span></div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- Small -->
+                                        <div class="w-100">
+                                            <ul class="avatar-group">
+                                                <li class="avatar-wrapper">
+                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="John Doe">
+                                                        <img src="./assets/images/fl-avatar.svg" class="avatar avatar-sm" alt="avatar">
+                                                    </a>
+                                                </li>
+                                                <li class="avatar-wrapper">
+                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="Jeni Doe">
+                                                        <img src="./assets/images/fl-avatar.svg" class="avatar avatar-sm" alt="avatar" title="John">
+                                                    </a>
+                                                </li>
+                                                <li class="avatar-wrapper">
+                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="Marquez">
+                                                        <img src="./assets/images/fl-avatar.svg" class="avatar avatar-sm" alt="avatar">
+                                                    </a>
+                                                </li>
+                                                <li class="avatar-wrapper">
+                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="Show more">
+                                                        <div class="avatar avatar-sm"><span class="initial">16+</span></div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#avatarGroup__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="avatarGroup__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;ul class=&#x22;avatar-group&#x22;&#x3E;
+    &#x3C;li class=&#x22;avatar-wrapper&#x22;&#x3E;
+        &#x3C;a href=&#x22;#&#x22; data-toggle=&#x22;tooltip&#x22; title=&#x22;John Doe&#x22;&#x3E;
+            &#x3C;img src=&#x22;...Your image url...&#x22; class=&#x22;avatar&#x22; alt=&#x22;avatar&#x22;&#x3E;
+        &#x3C;/a&#x3E;
+    &#x3C;/li&#x3E;
+    &#x3C;li class=&#x22;avatar-wrapper&#x22;&#x3E;
+        &#x3C;a href=&#x22;#&#x22; data-toggle=&#x22;tooltip&#x22; title=&#x22;Jeni Doe&#x22;&#x3E;
+            &#x3C;img src=&#x22;...Your image url...&#x22; class=&#x22;avatar&#x22; alt=&#x22;avatar&#x22; title=&#x22;John&#x22;&#x3E;
+        &#x3C;/a&#x3E;
+    &#x3C;/li&#x3E;
+    &#x3C;li class=&#x22;avatar-wrapper&#x22;&#x3E;
+        &#x3C;a href=&#x22;#&#x22; data-toggle=&#x22;tooltip&#x22; title=&#x22;Marquez&#x22;&#x3E;
+            &#x3C;img src=&#x22;...Your image url...&#x22; class=&#x22;avatar&#x22; alt=&#x22;avatar&#x22;&#x3E;
+        &#x3C;/a&#x3E;
+    &#x3C;/li&#x3E;
+    &#x3C;li class=&#x22;avatar-wrapper&#x22;&#x3E;
+        &#x3C;a href=&#x22;#&#x22; data-toggle=&#x22;tooltip&#x22; title=&#x22;Show more&#x22;&#x3E;
+            &#x3C;div class=&#x22;avatar&#x22;&#x3E;&#x3C;span class=&#x22;initial&#x22;&#x3E;16+&#x3C;/span&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/a&#x3E;
+    &#x3C;/li&#x3E;
+&#x3C;/ul&#x3E;</code></pre>
+</div>
+                            </div>
+
+                            <!-- Avatar Group Item -->
+                            <div class="card-body mt-4" id="avatar-list-group">
+                                <h5 class="card-title mb-1">Avatar List Group</h5>
+                                <p class="small text-muted">A group of avatar items using <code>.avatar-group-item</code> class</p>
+                                <div class="row no-gutters align-items-end justify-content-md-center">
+                                    <div class="col-md-3">
+                                        <div class="avatar-list-group">
+                                            <a href="javascript:void(0)" class="avatar-item">
+                                                <div class="avatar-wrapper">
+                                                    <img src="./assets/images/fl-avatar.svg" class="avatar" alt="Loui Dalton">
+                                                </div>
+                                                <div class="avatar-desc">
+                                                    <div>Loui Dalton</div>
+                                                    <div class="small text-muted">louidalton@mail.com</div>
+                                                </div>
+                                            </a>    
+                                            <a href="javascript:void(0)" class="avatar-item">
+                                                <div class="avatar-wrapper">
+                                                    <img src="./assets/images/fl-avatar.svg" class="avatar" alt="Angela Clements">
+                                                </div>
+                                                <div class="avatar-desc">
+                                                    <div>Angela Clements</div>
+                                                    <div class="small text-muted">angelaclements@mail.com</div>
+                                                </div>
+                                            </a>
+                                            <a href="javascript:void(0)" class="avatar-item">
+                                                <div class="avatar-wrapper">
+                                                    <img src="./assets/images/fl-avatar.svg" class="avatar" alt="Kallum Brown">
+                                                </div>
+                                                <div class="avatar-desc">
+                                                    <div>Kallum Brown</div>
+                                                    <div class="small text-muted">kallumbrown@mail.com</div>
+                                                </div>
+                                            </a>
+                                            <a href="javascript:void(0)" class="avatar-item">
+                                                <div class="avatar-wrapper">
+                                                    <img src="./assets/images/fl-avatar.svg" class="avatar" alt="avatar">
+                                                </div>
+                                                <div class="avatar-desc">
+                                                    <div>Eamon Cottrell</div>
+                                                    <div class="small text-muted">eamoncottrell@mail.com</div>
+                                                </div>
+                                            </a>
+                                            <a href="javascript:void(0)" class="avatar-item">
+                                                <div class="avatar-wrapper">
+                                                    <img src="./assets/images/fl-avatar.svg" class="avatar" alt="Tyson Ellis">
+                                                </div>
+                                                <div class="avatar-desc">
+                                                    <div>Tyson Ellis</div>
+                                                    <div class="small text-muted">tysonellis@mail.com</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#avatarListGroup__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="avatarListGroup__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;div class=&#x22;row&#x22;&#x3E;
+    &#x3C;div class=&#x22;col-md-3&#x22;&#x3E;
+        &#x3C;div class=&#x22;avatar-list-group&#x22;&#x3E;
+            &#x3C;a href=&#x22;#&#x22; class=&#x22;avatar-item&#x22;&#x3E;
+                &#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+                    &#x3C;img src=&#x22;...Your image url...&#x22; class=&#x22;avatar&#x22; alt=&#x22;Loui Dalton&#x22;&#x3E;
+                &#x3C;/div&#x3E;
+                &#x3C;div class=&#x22;avatar-desc&#x22;&#x3E;
+                    &#x3C;div&#x3E;Loui Dalton&#x3C;/div&#x3E;
+                    &#x3C;div class=&#x22;small text-muted&#x22;&#x3E;louidalton@mail.com&#x3C;/div&#x3E;
+                &#x3C;/div&#x3E;
+            &#x3C;/a&#x3E;    
+            &#x3C;a href=&#x22;#&#x22; class=&#x22;avatar-item&#x22;&#x3E;
+                &#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+                    &#x3C;img src=&#x22;...Your image url...&#x22; class=&#x22;avatar&#x22; alt=&#x22;Angela Clements&#x22;&#x3E;
+                &#x3C;/div&#x3E;
+                &#x3C;div class=&#x22;avatar-desc&#x22;&#x3E;
+                    &#x3C;div&#x3E;Angela Clements&#x3C;/div&#x3E;
+                    &#x3C;div class=&#x22;small text-muted&#x22;&#x3E;angelaclements@mail.com&#x3C;/div&#x3E;
+                &#x3C;/div&#x3E;
+            &#x3C;/a&#x3E;
+            &#x3C;a href=&#x22;#&#x22; class=&#x22;avatar-item&#x22;&#x3E;
+                &#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+                    &#x3C;img src=&#x22;...Your image url...&#x22; class=&#x22;avatar&#x22; alt=&#x22;Kallum Brown&#x22;&#x3E;
+                &#x3C;/div&#x3E;
+                &#x3C;div class=&#x22;avatar-desc&#x22;&#x3E;
+                    &#x3C;div&#x3E;Kallum Brown&#x3C;/div&#x3E;
+                    &#x3C;div class=&#x22;small text-muted&#x22;&#x3E;kallumbrown@mail.com&#x3C;/div&#x3E;
+                &#x3C;/div&#x3E;
+            &#x3C;/a&#x3E;
+            &#x3C;a href=&#x22;#&#x22; class=&#x22;avatar-item&#x22;&#x3E;
+                &#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+                    &#x3C;img src=&#x22;...Your image url...&#x22; class=&#x22;avatar&#x22; alt=&#x22;avatar&#x22;&#x3E;
+                &#x3C;/div&#x3E;
+                &#x3C;div class=&#x22;avatar-desc&#x22;&#x3E;
+                    &#x3C;div&#x3E;Eamon Cottrell&#x3C;/div&#x3E;
+                    &#x3C;div class=&#x22;small text-muted&#x22;&#x3E;eamoncottrell@mail.com&#x3C;/div&#x3E;
+                &#x3C;/div&#x3E;
+            &#x3C;/a&#x3E;
+            &#x3C;a href=&#x22;#&#x22; class=&#x22;avatar-item&#x22;&#x3E;
+                &#x3C;div class=&#x22;avatar-wrapper&#x22;&#x3E;
+                    &#x3C;img src=&#x22;...Your image url...&#x22; class=&#x22;avatar&#x22; alt=&#x22;Tyson Ellis&#x22;&#x3E;
+                &#x3C;/div&#x3E;
+                &#x3C;div class=&#x22;avatar-desc&#x22;&#x3E;
+                    &#x3C;div&#x3E;Tyson Ellis&#x3C;/div&#x3E;
+                    &#x3C;div class=&#x22;small text-muted&#x22;&#x3E;tysonellis@mail.com&#x3C;/div&#x3E;
+                &#x3C;/div&#x3E;
+            &#x3C;/a&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Sidenav -->
+                    <nav class="d-none d-xl-block col-xl-2">
+                        <ul class="sidenav-sticky">
+                            <li class="nav-item">
+                                <a href="#basic">Avatar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#initial-letter">Initial Letters</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#avatar-group">Avatar Group</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#avatar-list-group">Avatar List Group</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </main>
+            
+            <!-- Content Footer -->
+            <%= htmlWebpackPlugin.options.footer %>
+        </section>
+    </div>
+    <!-- load JS scripts -->
+</body>
+</html>

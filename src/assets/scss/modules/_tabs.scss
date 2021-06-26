@@ -1,0 +1,81 @@
+// tabs.scss
+.fl-tabs {
+    border-bottom: 1px solid $border-color;
+    position: relative;
+    .nav-item {
+        margin-bottom: 0;
+    }
+    .nav-link {
+        @include roundedCorners(6);
+        font-weight: $font-weight-medium;
+        padding: .75rem 1.25rem;
+        color: $secondary;
+        border: none!important;
+        @include hover-state {
+            background-color: transparent;
+            color: $primary;
+        }
+    }
+    .nav-link.active,
+    .nav-item.show .nav-link {
+        color: $primary;
+        background-color: transparent;
+        border: none;
+    }
+    .line {
+        @include roundedTop(3);
+        height: 3px;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        background-color: $primary;
+    }
+    &.flex-column {
+        .line {
+            @include roundedCorners(3);
+            width: 3px;
+            left: -1px;
+            top: 0;
+        }
+    }
+}
+.nav-tabs {
+    border-color: $border-color;
+    position: relative;
+    .nav-item {
+        margin-bottom: 0;
+    }
+    .nav-link {
+        font-weight: $font-weight-medium;
+        @include roundedCorners(6);
+        padding: .75rem 1.25rem;
+        color: $secondary;
+        border: none!important;
+        @include hover-state {
+            background-color: transparent;
+            color: $primary;
+        }
+    }
+    .nav-link.active,
+    .nav-item.show .nav-link {
+        color: $primary;
+        background-color: transparent;
+        border: none;
+    }
+    .line {
+        @include roundedTop(3);
+        height: 3px;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        background-color: $primary;
+    }
+    &.flex-column {
+        .line {
+            @include roundedCorners(3);
+            width: 3px;
+            left: -1px;
+            top: 0;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+// colors.scss
+
+$primary-shade-10: shade($primary, 10%);
+$primary-shade-20: shade($primary, 20%);
+$primary-shade-30: shade($primary, 30%);
+$primary-shade-40: shade($primary, 40%);
+$primary-shade-50: shade($primary, 50%);
+
+$light-shade-10: shade($light, 10%);
+$light-shade-20: shade($light, 20%);
+$light-shade-30: shade($light, 30%);
+$light-shade-40: shade($light, 40%);
+$light-shade-50: shade($light, 50%);
+
+$grayscale-colors: () !default;
+$grayscale-colors: map-merge(
+    (
+        "light-shade-10": $light-shade-10,
+        "light-shade-20": $light-shade-20,
+        "light-shade-30": $light-shade-30,
+        "light-shade-40": $light-shade-40,
+        "light-shade-50": $light-shade-50,
+    ),
+    $grayscale-colors
+);

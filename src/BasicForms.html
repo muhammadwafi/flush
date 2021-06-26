@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title><%= htmlWebpackPlugin.options.title %> | Flush</title>
+        <%= htmlWebpackPlugin.options.metaHeader %>
+    </head>
+
+    <body>
+        <div class="fl-app" id="app">
+            <!-- Sidebar -->
+            <%= htmlWebpackPlugin.options.sidebarNav %>
+
+            <!-- Content -->
+            <section class="fl-content">
+                <!-- Content Header -->
+                <%= htmlWebpackPlugin.options.contentHeader %>
+
+                <!-- Main Content -->
+                <main class="container-fluid" role="main">
+                    <div class="row">
+                        <div class="col-xl-10">
+                            <!-- Basic Form -->
+                            <div class="card" id="basic-form">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <div class="mb-1 h3">Basic Form</div>
+                                        <div class="small text-muted">Basic form element styling</div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-6">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="username">Username</label>
+                                                    <input type="text" class="form-control" id="username"
+                                                        aria-describedby="usernameHelp" placeholder="e.g johndoe" required="required">
+                                                    <small id="usernameHelp" class="form-text text-muted">Your username must be unique and without space</small>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email">Email</label>
+                                                    <input type="email" class="form-control" id="email"
+                                                        aria-describedby="emailHelp" 
+                                                        placeholder="e.g johndoe@mail.com"
+                                                        required="required">
+                                                    <small id="emailHelp" class="form-text text-muted">Your email won't be shown to public</small>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="password">Password</label>
+                                                    <input type="password" class="form-control" id="password"
+                                                        aria-describedby="passwordHelp" required="required">
+                                                    <small id="passwordHelp" class="form-text text-muted">Your password must be unique and 8 letters minimum</small>
+                                                </div>
+                                                <div class="form-row mt-4">
+                                                    <div class="col-md-8">
+                                                        <div class="form-group">
+                                                            <p class="text-muted small">
+                                                                By clicking "Create Account" button you are agreeing to the terms of use and acknowledging the privacy policy
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group text-right">
+                                                            <button type="submit" class="btn btn-primary">Create Account</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fl-codebox">
+                                    <button class="fl-codebox__btn" data-toggle="collapse" data-target="#basicForm__code">
+                                        <i data-feather="code" class="icon-xs"></i> Show Code
+                                    </button>
+                                </div>
+                                <div class="collapse" id="basicForm__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;form&#x3E;
+    &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+        &#x3C;label for=&#x22;username&#x22;&#x3E;Username&#x3C;/label&#x3E;
+        &#x3C;input type=&#x22;text&#x22; class=&#x22;form-control&#x22; id=&#x22;username&#x22;
+            aria-describedby=&#x22;usernameHelp&#x22; placeholder=&#x22;e.g johndoe&#x22; required=&#x22;required&#x22;&#x3E;
+        &#x3C;small id=&#x22;usernameHelp&#x22; class=&#x22;form-text text-muted&#x22;&#x3E;Your username must be unique and without space&#x3C;/small&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+        &#x3C;label for=&#x22;email&#x22;&#x3E;Email&#x3C;/label&#x3E;
+        &#x3C;input type=&#x22;email&#x22; class=&#x22;form-control&#x22; id=&#x22;email&#x22;
+            aria-describedby=&#x22;emailHelp&#x22; 
+            placeholder=&#x22;e.g johndoe@mail.com&#x22;
+            required=&#x22;required&#x22;&#x3E;
+        &#x3C;small id=&#x22;emailHelp&#x22; class=&#x22;form-text text-muted&#x22;&#x3E;Your email won&#x27;t be shown to public&#x3C;/small&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+        &#x3C;label for=&#x22;password&#x22;&#x3E;Password&#x3C;/label&#x3E;
+        &#x3C;input type=&#x22;password&#x22; class=&#x22;form-control&#x22; id=&#x22;password&#x22;
+            aria-describedby=&#x22;passwordHelp&#x22; required=&#x22;required&#x22;&#x3E;
+        &#x3C;small id=&#x22;passwordHelp&#x22; class=&#x22;form-text text-muted&#x22;&#x3E;Your password must be unique and 8 letters minimum&#x3C;/small&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;form-row mt-4&#x22;&#x3E;
+        &#x3C;div class=&#x22;col-md-8&#x22;&#x3E;
+            &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+                &#x3C;p class=&#x22;text-muted small&#x22;&#x3E;
+                    By clicking &#x22;Create Account&#x22; button you are agreeing to the terms of use and acknowledging the privacy policy
+                &#x3C;/p&#x3E;
+            &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;col-md-4&#x22;&#x3E;
+            &#x3C;div class=&#x22;form-group text-right&#x22;&#x3E;
+                &#x3C;button type=&#x22;submit&#x22; class=&#x22;btn btn-primary&#x22;&#x3E;Create Account&#x3C;/button&#x3E;
+            &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/form&#x3E;</code>
+</pre>
+</div>
+                                </div>
+
+                                <!-- Form Sizing -->
+                                <div class="card-body mt-4" id="form-sizing">
+                                    <h5 class="card-title mb-1">Form Sizing</h5>
+                                    <p class="small text-muted">Basic form sizing small, default, and large</p>
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-6">
+                                            <form>
+                                                <!-- large -->
+                                                <div class="form-group">
+                                                    <label for="inputTextLg">Form Input Large</label>
+                                                    <input type="text" class="form-control form-control-lg"
+                                                        id="inputTextLg" aria-describedby="usernameHelp"
+                                                        placeholder=".form-control-lg">
+                                                </div>
+                                                <!-- default -->
+                                                <div class="form-group">
+                                                    <label for="inputTextDefault">Form Input Default</label>
+                                                    <input type="text" class="form-control" id="inputTextDefault"
+                                                        aria-describedby="usernameHelp2" placeholder=".form-control">
+                                                </div>
+                                                <!-- small -->
+                                                <div class="form-group">
+                                                    <label for="inputTextSmall">Form Input Small</label>
+                                                    <input type="text" class="form-control form-control-sm"
+                                                        id="inputTextSmall" aria-describedby="usernameHelp3"
+                                                        placeholder=".form-control-sm">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fl-codebox">
+                                    <button class="fl-codebox__btn" data-toggle="collapse" data-target="#formSizing__code">
+                                        <i data-feather="code" class="icon-xs"></i> Show Code
+                                    </button>
+                                </div>
+                                <div class="collapse" id="formSizing__code">
+<div class="syntax-highlight">
+    <pre><code class="language-html">&#x3C;!-- large --&#x3E;
+&#x3C;div class=&#x22;form-group&#x22;&#x3E;
+    &#x3C;label for=&#x22;inputTextLg&#x22;&#x3E;Form Input Large&#x3C;/label&#x3E;
+    &#x3C;input type=&#x22;text&#x22; class=&#x22;form-control form-control-lg&#x22;
+        id=&#x22;inputTextLg&#x22; aria-describedby=&#x22;usernameHelp&#x22;
+        placeholder=&#x22;.form-control-lg&#x22;&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Default --&#x3E;
+&#x3C;div class=&#x22;form-group&#x22;&#x3E;
+    &#x3C;label for=&#x22;inputTextDefault&#x22;&#x3E;Form Input Default&#x3C;/label&#x3E;
+    &#x3C;input type=&#x22;text&#x22; class=&#x22;form-control&#x22; id=&#x22;inputTextDefault&#x22;
+        aria-describedby=&#x22;usernameHelp2&#x22; placeholder=&#x22;.form-control&#x22;&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Small --&#x3E;
+&#x3C;div class=&#x22;form-group&#x22;&#x3E;
+    &#x3C;label for=&#x22;inputTextSmall&#x22;&#x3E;Form Input Small&#x3C;/label&#x3E;
+    &#x3C;input type=&#x22;text&#x22; class=&#x22;form-control form-control-sm&#x22;
+        id=&#x22;inputTextSmall&#x22; aria-describedby=&#x22;usernameHelp3&#x22;
+        placeholder=&#x22;.form-control-sm&#x22;&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+</div>
+                                </div>
+
+                                <!-- Readonly Input -->
+                                <div class="card-body mt-4" id="readonly">
+                                    <h5 class="card-title mb-1">Readonly Input</h5>
+                                    <p class="small text-muted">Basic readonly input and readonly plain text</p>
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-6">
+                                            <form>
+                                                <!-- Readonly Input -->
+                                                <div class="form-group">
+                                                    <input class="form-control" type="text" placeholder="Readonly input here..." readonly>
+                                                </div>
+                                                <!-- Readonly Plain Text -->
+                                                <div class="form-group">
+                                                    <input type="text" readonly class="form-control-plaintext" value="Readonly plain text">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fl-codebox">
+                                    <button class="fl-codebox__btn" data-toggle="collapse" data-target="#readOnly__code">
+                                        <i data-feather="code" class="icon-xs"></i> Show Code
+                                    </button>
+                                </div>
+                                <div class="collapse" id="readOnly__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;!-- Readonly Input --&#x3E;
+&#x3C;div class=&#x22;form-group&#x22;&#x3E;
+    &#x3C;input class=&#x22;form-control&#x22; type=&#x22;text&#x22; placeholder=&#x22;Readonly input here...&#x22; readonly&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- Readonly Plain Text --&#x3E;
+&#x3C;div class=&#x22;form-group&#x22;&#x3E;
+    &#x3C;input type=&#x22;text&#x22; readonly class=&#x22;form-control-plaintext&#x22; value=&#x22;Readonly plain text&#x22;&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+</div>
+                                </div>
+
+                                <!-- Custom Input Addon -->
+                                <div class="card-body mt-4" id="custom-input-addon">
+                                    <h5 class="card-title mb-1">Custom Input Addon</h5>
+                                    <p class="small text-muted">Custom input group addon by adding <code> input-group-addon</code> element</p>
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-6">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="usernameAddon">Username</label>
+                                                    <div class="input-group custom">
+                                                        <div class="input-group-addon">
+                                                            <div class="input-group-text">
+                                                                <i data-feather="user"></i>
+                                                            </div>
+                                                        </div>
+                                                        <input type="text" name="username" class="form-control" placeholder="e.g John Doe" id="usernameAddon">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="passwordAddon">Password</label>
+                                                    <div class="input-group custom">
+                                                        <div class="input-group-addon">
+                                                            <div class="input-group-text">
+                                                                <i data-feather="lock"></i>
+                                                            </div>
+                                                        </div>
+                                                        <input type="password" name="password" class="form-control" id="passwordAddon" placeholder="Secure password">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fl-codebox">
+                                    <button class="fl-codebox__btn" data-toggle="collapse" data-target="#customInputAddon__code">
+                                        <i data-feather="code" class="icon-xs"></i> Show Code
+                                    </button>
+                                </div>
+                                <div class="collapse" id="customInputAddon__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;form&#x3E;
+    &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+        &#x3C;label for=&#x22;usernameAddon&#x22;&#x3E;Username&#x3C;/label&#x3E;
+        &#x3C;div class=&#x22;input-group custom&#x22;&#x3E;
+            &#x3C;div class=&#x22;input-group-addon&#x22;&#x3E;
+                &#x3C;div class=&#x22;input-group-text&#x22;&#x3E;
+                    &#x3C;i data-feather=&#x22;user&#x22;&#x3E;&#x3C;/i&#x3E;
+                &#x3C;/div&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;input type=&#x22;text&#x22; name=&#x22;username&#x22; class=&#x22;form-control&#x22; placeholder=&#x22;e.g John Doe&#x22; id=&#x22;usernameAddon&#x22;&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+        &#x3C;label for=&#x22;passwordAddon&#x22;&#x3E;Password&#x3C;/label&#x3E;
+        &#x3C;div class=&#x22;input-group custom&#x22;&#x3E;
+            &#x3C;div class=&#x22;input-group-addon&#x22;&#x3E;
+                &#x3C;div class=&#x22;input-group-text&#x22;&#x3E;
+                    &#x3C;i data-feather=&#x22;lock&#x22;&#x3E;&#x3C;/i&#x3E;
+                &#x3C;/div&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;input type=&#x22;password&#x22; name=&#x22;password&#x22; class=&#x22;form-control&#x22; id=&#x22;passwordAddon&#x22; placeholder=&#x22;Secure password&#x22;&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/form&#x3E;</code></pre>
+</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Sidenav -->
+                        <nav class="d-none d-xl-block col-xl-2">
+                            <ul class="sidenav-sticky">
+                                <li class="nav-item">
+                                    <a href="#basic-form">Basic Form</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#form-sizing">Form Sizing</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#readonly">Readonly</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#custom-input-addon">Custom Input Addon</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </main>
+
+                <!-- Content Footer -->
+                <%= htmlWebpackPlugin.options.footer %>
+            </section>
+        </div>
+        <!-- load JS scripts -->
+    </body>
+
+</html>

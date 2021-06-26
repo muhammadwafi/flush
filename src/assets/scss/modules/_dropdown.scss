@@ -1,0 +1,190 @@
+// dropdown.scss
+
+.dropdown-menu {
+    @include roundedCorners(12);
+    font-size: inherit;
+    min-width: 11rem;
+    border-color: rgba(17, 30, 80, 0.08);
+    box-shadow: 0 2px 5px 0 rgba(17, 19, 41, 0.05), 
+                0 5px 15px 0 rgba(12, 21, 47, 0.09), 
+                inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    
+    // dropdown menu arrow default
+    // =====================================================
+    &:before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        z-index: -1;
+    }
+    &.show {
+        &:before {
+            top: -6px;
+            left: 16px;
+            width: 12px;
+            height: 12px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            border-radius: 4px 0 0 0;
+            background: #fff;
+            -webkit-box-shadow: -2px -2px 3px rgba(82, 95, 127, 0.15);
+            box-shadow: -2px -2px 3px rgba(82, 95, 127, 0.15);
+            will-change: transform;
+            -webkit-transition-property: -webkit-transform;
+            transition-property: -webkit-transform;
+            transition-property: transform;
+            transition-property: transform,-webkit-transform;
+        }
+        &.dropdown-menu-right {
+            &:before {
+                right: 12px;
+                left: auto;
+            }
+        }
+    }
+    // dropdown placement on top -> arrow
+    // =====================================================
+    &[x-placement^=top] {
+        &:before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+        }
+        &.show {
+            &:before {
+                top: 94%;
+                left: 20px;
+                width: 12px;
+                height: 12px;
+                -webkit-transform: rotate(225deg);
+                transform: rotate(225deg);
+                border-radius: 4px 0 0 0;
+                background: #fff;
+                -webkit-box-shadow: -2px -2px 3px rgba(82, 95, 127, 0.15);
+                box-shadow: -2px -2px 3px rgba(82, 95, 127, 0.15);
+                will-change: transform;
+                -webkit-transition-property: -webkit-transform;
+                transition-property: -webkit-transform;
+                transition-property: transform;
+                transition-property: transform,-webkit-transform;
+            }
+            &.dropdown-menu-right {
+                &:before {
+                    right: 9px;
+                    left: auto;
+                }
+            }
+        }
+    }
+
+    .dropdown-item {
+        @include roundedCorners(8);
+        @include hover-state {
+            background: $light-20;
+            color: $dark;
+        }
+        @include active-state {
+            background: $primary;
+            color: $white;
+        }
+        width: auto;
+        margin: 0 .35rem .15rem .35rem;
+        padding: .5rem 1rem;
+        font-size: $font-size-nm;
+        position: relative;
+        z-index: 1;
+    }
+
+    .separated-content {
+        @include roundedBottom(12);
+        background: $light;
+        display: block;
+        // padding-top: 8px;
+        padding-top: 12px;
+        padding-bottom: 6px;
+        margin: .25rem -.25px -.5rem -.25px;
+        position: relative;
+        &::before {
+            content: "";
+            height: 12px;
+            width: 100%;
+            background: $white;
+            @include roundedBottom(12);
+            border-bottom: 1px solid rgba(17, 30, 80, 0.15);
+            position: absolute;
+            top: -6px;
+            left: 0;
+            z-index: 0;
+        }
+    }
+
+    &-lg {
+        min-width: 22rem;
+    }
+
+    &-center {
+        right: auto;
+        left: 50%;
+        -webkit-transform: translate(-50%, 0px);
+           -moz-transform: translate(-50%, 0px);
+                transform: translate(-50%, 0px);
+    }
+    .dropdown-content {
+        @include roundedCorners(14);
+        background-color: $light;
+        padding: 10px 15px 30px;
+    }
+    .list-group-item {
+        border-width: 2px;
+        border-color: $light;
+        position: relative;
+        z-index: 1;
+        padding: 1rem 1.25rem 1rem .5rem;
+        margin-bottom: -20px;
+        @include roundedCorners(14);
+        @include zindex;
+        &:nth-child(n+2) {
+            padding-top: 30px;
+        }
+        &:hover {
+            background: $light-lt!important;
+        }
+        @include active-state {
+            color: $dark;
+            background: $secondary-lt!important;
+            border-color: $light!important;
+        }
+    }
+}
+
+.dropdown-header {
+    display: flex;
+    align-items: center;
+    color: $text-muted;
+    padding: .75rem 1.25rem;
+    position: relative;
+    &:first-child {
+        @include roundedTop(12);
+        color: $primary;
+        margin-top: -.5rem;
+    }
+}
+.dropdown-footer {
+    color: $text-muted;
+    padding: .5rem 1.25rem;
+    margin-bottom: -.25rem;
+}
+.dropdown-toggle::after {
+    content: "";
+    display: inline-block;
+    border-width: 0 .1rem .1rem 0;
+    border-style: solid;
+    border-color: $border-color;
+    margin-left: .45rem;
+    margin-bottom: -2px;
+    width: .35rem;
+    height: .35rem;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    transition: all .25s ease-in-out;
+}

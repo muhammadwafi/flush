@@ -1,0 +1,45 @@
+.feather {
+    color: inherit;
+    fill: rgba(16, 46, 109, 0.1);
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    &.icon-xl {
+      width: 48px;
+      height: 48px;
+    }
+    &.icon-lg {
+      width: 28px;
+      height: 28px;
+    }
+    &.icon-md {
+      width: 24px;
+      height: 24px;
+    }
+    &.icon-nm {
+      width: 18px;
+      height: 18px;
+    }
+    &.icon-sm {
+      width: 16px;
+      height: 16px;
+    }
+    &.icon-xs {
+      width: 12px;
+      height: 12px;
+    }
+    // theming
+    @each $color, $values in $theme-colors {
+		&.fill-#{$color} {
+			color: $values;
+			fill: rgba($values, 0.15);
+		}
+	}
+	&.fill-white {
+		color: $white;
+		fill: rgba(255, 255, 255, 0.15);
+	}
+	&.fill-none {
+		fill: none!important;
+	}
+  }

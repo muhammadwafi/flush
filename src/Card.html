@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= htmlWebpackPlugin.options.title %> | MWadmin</title>
+    <%= htmlWebpackPlugin.options.metaHeader %>
+</head>
+<body>
+    <div class="fl-app" id="app">
+        <!-- Sidebar -->
+        <%= htmlWebpackPlugin.options.sidebarNav %>
+
+        <!-- Content -->
+        <section class="fl-content">
+            <!-- Content Header -->
+            <%= htmlWebpackPlugin.options.contentHeader %>
+
+            <!-- Main Content -->
+            <main class="container-fluid" role="main">
+                <div class="row">
+                    <div class="col-xl-10">
+                        <!-- Basic Cards -->
+                        <div class="card" id="basic-cards">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="mb-1 h3">Basic Cards</div>
+                                    <div class="small text-muted">Predefined basic cards styles using <code>.card</code> class</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Predefined basic cards styles combined with <code>bg-*</code> class partially, below is some examples of <code>.card</code> with or without <code>.bg-*</code> class.</p>
+                                <div class="row">
+                                    <!-- Basic -->
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card h-100">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <div class="mb-1">Card Basic</div>
+                                                    <div class="small text-muted">This is where you place subtitle</div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <p class="card-text">This is some text within a card body.</p>
+                                            </div>
+                                            <div class="card-footer">
+                                                <div class="py-1">Card Footer</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Basic Head Light -->
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card h-100">
+                                            <div class="card-header bg-light">
+                                                <div class="card-title">
+                                                    <div class="mb-1">Card Header Light</div>
+                                                    <div class="small text-muted">This is where you place subtitle</div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <p class="card-text">This is some text within a card body.</p>
+                                                <a href="#" class="card-link">Card link</a>
+                                                <a href="#" class="card-link">Another link</a>
+                                            </div>
+                                            <div class="card-footer">
+                                                <div class="py-1">Card Footer</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Basic Body Light -->
+                                    <div class="col-md-4 mb-2">
+                                        <div class="card h-100">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <div class="mb-1">Card Body Light</div>
+                                                    <div class="small text-muted">This is where you place subtitle</div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body bg-light">
+                                                <p class="card-text">This is some text within a card body.</p>
+                                                <div class="d-flex justify-content-end pt-4">
+                                                    <a href="#" class="btn btn-link mr-2">Cancel</a>
+                                                    <a href="#" class="btn btn-primary">Continue</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#cardBasic__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="cardBasic__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;!-- Basic --&#x3E;
+&#x3C;div class=&#x22;card h-100&#x22;&#x3E;
+    &#x3C;div class=&#x22;card-header&#x22;&#x3E;
+        &#x3C;div class=&#x22;card-title&#x22;&#x3E;
+            &#x3C;div class=&#x22;mb-1&#x22;&#x3E;Card Basic&#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;small text-muted&#x22;&#x3E;This is where you place subtitle&#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;card-body&#x22;&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;This is some text within a card body.&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;card-footer&#x22;&#x3E;
+        &#x3C;div class=&#x22;py-1&#x22;&#x3E;Card Footer&#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;!-- Basic Head Light --&#x3E;
+&#x3C;div class=&#x22;card h-100&#x22;&#x3E;
+    &#x3C;div class=&#x22;card-header bg-light&#x22;&#x3E;
+        &#x3C;div class=&#x22;card-title&#x22;&#x3E;
+            &#x3C;div class=&#x22;mb-1&#x22;&#x3E;Card Header Light&#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;small text-muted&#x22;&#x3E;This is where you place subtitle&#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;card-body&#x22;&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;This is some text within a card body.&#x3C;/p&#x3E;
+        &#x3C;a href=&#x22;#&#x22; class=&#x22;card-link&#x22;&#x3E;Card link&#x3C;/a&#x3E;
+        &#x3C;a href=&#x22;#&#x22; class=&#x22;card-link&#x22;&#x3E;Another link&#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;card-footer&#x22;&#x3E;
+        &#x3C;div class=&#x22;py-1&#x22;&#x3E;Card Footer&#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;!-- Basic Body Light --&#x3E;
+&#x3C;div class=&#x22;card h-100&#x22;&#x3E;
+    &#x3C;div class=&#x22;card-header&#x22;&#x3E;
+        &#x3C;div class=&#x22;card-title&#x22;&#x3E;
+            &#x3C;div class=&#x22;mb-1&#x22;&#x3E;Card Body Light&#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;small text-muted&#x22;&#x3E;This is where you place subtitle&#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;card-body bg-light&#x22;&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;This is some text within a card body.&#x3C;/p&#x3E;
+        &#x3C;div class=&#x22;d-flex justify-content-end pt-4&#x22;&#x3E;
+            &#x3C;a href=&#x22;#&#x22; class=&#x22;btn btn-link mr-2&#x22;&#x3E;Cancel&#x3C;/a&#x3E;
+            &#x3C;a href=&#x22;#&#x22; class=&#x22;btn btn-primary&#x22;&#x3E;Continue&#x3C;/a&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</code></pre>
+</div>
+                            </div>
+                        </div>
+
+                        <!-- Colorfull Cards -->
+                        <div class="card mt-3" id="colorfull-cards">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="mb-1 h3">Colorfull Cards</div>
+                                    <div class="small text-muted">Colorfull cards based on theme colors available</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <!-- Card Primary -->
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card bg-primary text-white">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <div class="mb-1">Card Primary</div>
+                                                    <div class="small text-muted">Card title descriptions</div>
+                                                </div>
+                                                <div class="card-action">
+                                                    <a class="btn btn-icon btn-link" href="#">
+                                                        <i data-feather="settings" class="icon-nm"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <p class="card-text">This is some text within a card body.</p>
+                                                <a href="#" class="card-link">Card link</a>
+                                                <a href="#" class="card-link">Another link</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card Success -->
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card bg-success text-white">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <div class="mb-1">Card Success</div>
+                                                    <div class="small text-muted">Card title descriptions</div>
+                                                </div>
+                                                <div class="card-action">
+                                                    <a class="btn btn-icon btn-link" href="#">
+                                                        <i data-feather="settings" class="icon-nm"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <p class="card-text">This is some text within a card body.</p>
+                                                <a href="#" class="card-link">Card link</a>
+                                                <a href="#" class="card-link">Another link</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card Dark -->
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card bg-dark text-white">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <div class="mb-1">Card Dark</div>
+                                                    <div class="small text-muted">Card title descriptions</div>
+                                                </div>
+                                                <div class="card-action">
+                                                    <a class="btn btn-icon btn-link" href="#">
+                                                        <i data-feather="settings" class="icon-nm"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <p class="card-text">This is some text within a card body.</p>
+                                                <a href="#" class="card-link">Card link</a>
+                                                <a href="#" class="card-link">Another link</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#cardColorfull__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="cardColorfull__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;!-- Card Primary --&#x3E;
+&#x3C;div class=&#x22;card bg-primary text-white&#x22;&#x3E;
+    &#x3C;div class=&#x22;card-header&#x22;&#x3E;
+        &#x3C;div class=&#x22;card-title&#x22;&#x3E;
+            &#x3C;div class=&#x22;mb-1&#x22;&#x3E;Card Primary&#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;small text-muted&#x22;&#x3E;Card title descriptions&#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;card-action&#x22;&#x3E;
+            &#x3C;a class=&#x22;btn btn-icon btn-link&#x22; href=&#x22;#&#x22;&#x3E;
+                &#x3C;i class=&#x22;icon-settings&#x22;&#x3E;&#x3C;/i&#x3E;
+            &#x3C;/a&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;card-body&#x22;&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;This is some text within a card body.&#x3C;/p&#x3E;
+        &#x3C;a href=&#x22;#&#x22; class=&#x22;card-link&#x22;&#x3E;Card link&#x3C;/a&#x3E;
+        &#x3C;a href=&#x22;#&#x22; class=&#x22;card-link&#x22;&#x3E;Another link&#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+    
+&#x3C;!-- Card Success --&#x3E;
+&#x3C;div class=&#x22;card bg-success text-white&#x22;&#x3E;
+    &#x3C;div class=&#x22;card-header&#x22;&#x3E;
+        &#x3C;div class=&#x22;card-title&#x22;&#x3E;
+            &#x3C;div class=&#x22;mb-1&#x22;&#x3E;Card Success&#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;small text-muted&#x22;&#x3E;Card title descriptions&#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;card-action&#x22;&#x3E;
+            &#x3C;a class=&#x22;btn btn-icon btn-link&#x22; href=&#x22;#&#x22;&#x3E;
+                &#x3C;i class=&#x22;icon-settings&#x22;&#x3E;&#x3C;/i&#x3E;
+            &#x3C;/a&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;card-body&#x22;&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;This is some text within a card body.&#x3C;/p&#x3E;
+        &#x3C;a href=&#x22;#&#x22; class=&#x22;card-link&#x22;&#x3E;Card link&#x3C;/a&#x3E;
+        &#x3C;a href=&#x22;#&#x22; class=&#x22;card-link&#x22;&#x3E;Another link&#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;!-- Card Dark --&#x3E;
+&#x3C;div class=&#x22;card bg-dark text-white&#x22;&#x3E;
+    &#x3C;div class=&#x22;card-header&#x22;&#x3E;
+        &#x3C;div class=&#x22;card-title&#x22;&#x3E;
+            &#x3C;div class=&#x22;mb-1&#x22;&#x3E;Card Dark&#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;small text-muted&#x22;&#x3E;Card title descriptions&#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;card-action&#x22;&#x3E;
+            &#x3C;a class=&#x22;btn btn-icon btn-link&#x22; href=&#x22;#&#x22;&#x3E;
+                &#x3C;i class=&#x22;icon-settings&#x22;&#x3E;&#x3C;/i&#x3E;
+            &#x3C;/a&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;card-body&#x22;&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;This is some text within a card body.&#x3C;/p&#x3E;
+        &#x3C;a href=&#x22;#&#x22; class=&#x22;card-link&#x22;&#x3E;Card link&#x3C;/a&#x3E;
+        &#x3C;a href=&#x22;#&#x22; class=&#x22;card-link&#x22;&#x3E;Another link&#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</code></pre>
+</div>
+                            </div>
+                        </div>
+
+                        <!-- Cards Image -->
+                        <div class="card mt-3" id="cards-image">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="mb-1 h3">Cards Image</div>
+                                    <div class="small text-muted">Basic card images</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <!-- Card Image Top -->
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <div class="card-img-wrapper">
+                                                <img src="https://source.unsplash.com/S-sXkRJ-9pA/500x334" class="card-img-top" alt="Placeholder">
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card image at top</h5>
+                                                <p class="card-text">This is a card with supporting text below as a natural lead-in to additional
+                                                    content. This content is a little bit longer.</p>
+                                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card Image Bottom -->
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card image at bottom</h5>
+                                                <p class="card-text">This is a card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                            </div>
+                                            <div class="card-img-wrapper">
+                                                <img src="https://source.unsplash.com/Z8uJ_8PkNpg/500x334" class="card-img-bottom" alt="Placeholder">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card Image with Header and Footer -->
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="card-title">Card image with header and footer</h5>
+                                            </div>
+                                            <div class="card-img-wrapper">
+                                                <img src="https://source.unsplash.com/SJGiS1JzUCc/500x334" class="card-img" alt="Placeholder">
+                                            </div>
+                                            <div class="card-body">
+                                                <p class="card-text">This is a card with supporting text below as a natural lead-in to additional content.</p>
+                                            </div>
+                                            <div class="card-footer">
+                                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#cardImage__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="cardImage__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;!-- Card Image Top --&#x3E;
+&#x3C;div class=&#x22;card&#x22;&#x3E;
+    &#x3C;div class=&#x22;card-img-wrapper&#x22;&#x3E;
+        &#x3C;img src=&#x22;https://source.unsplash.com/S-sXkRJ-9pA/500x334&#x22; class=&#x22;card-img-top&#x22; alt=&#x22;Placeholder&#x22;&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;card-body&#x22;&#x3E;
+        &#x3C;h5 class=&#x22;card-title&#x22;&#x3E;Card image at top&#x3C;/h5&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;This is a card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.&#x3C;/p&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;&#x3C;small class=&#x22;text-muted&#x22;&#x3E;Last updated 3 mins ago&#x3C;/small&#x3E;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;!-- Card Image Bottom --&#x3E;
+&#x3C;div class=&#x22;card&#x22;&#x3E;
+    &#x3C;div class=&#x22;card-body&#x22;&#x3E;
+        &#x3C;h5 class=&#x22;card-title&#x22;&#x3E;Card image at bottom&#x3C;/h5&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;This is a card with supporting text below as a natural lead-in to additional content. 
+        This content is a little bit longer.&#x3C;/p&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;&#x3C;small class=&#x22;text-muted&#x22;&#x3E;Last updated 3 mins ago&#x3C;/small&#x3E;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;card-img-wrapper&#x22;&#x3E;
+        &#x3C;img src=&#x22;https://source.unsplash.com/Z8uJ_8PkNpg/500x334&#x22; class=&#x22;card-img-bottom&#x22; alt=&#x22;Placeholder&#x22;&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;!-- Card Image with Header and Footer --&#x3E;
+&#x3C;div class=&#x22;card&#x22;&#x3E;
+    &#x3C;div class=&#x22;card-header&#x22;&#x3E;
+        &#x3C;h5 class=&#x22;card-title&#x22;&#x3E;Card image with header and footer&#x3C;/h5&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;card-img-wrapper&#x22;&#x3E;
+        &#x3C;img src=&#x22;https://source.unsplash.com/SJGiS1JzUCc/500x334&#x22; class=&#x22;card-img&#x22; alt=&#x22;Placeholder&#x22;&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;card-body&#x22;&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;This is a card with supporting text below as a natural lead-in to additional content.&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;card-footer&#x22;&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;&#x3C;small class=&#x22;text-muted&#x22;&#x3E;Last updated 3 mins ago&#x3C;/small&#x3E;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</code></pre>
+</div>
+                            </div>
+
+                            <!-- Cards Image Horizontal -->
+                            <div class="card-body mt-4"  id="cards-image-horizontal">
+                                <h5 class="card-title mb-1">Card Image Horizontal</h5>
+                                <p class="small text-muted">Horizontal layout on cards image</p>
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card card-horizontal h-100">
+                                            <div class="row no-gutters">
+                                                <div class="col-4">
+                                                    <div class="card-img-wrapper">
+                                                        <img src="https://source.unsplash.com/SJGiS1JzUCc/500x334" class="card-img" alt="Placeholder">
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Card Horizontal with Image</h5>
+                                                        <p class="card-text">This is a card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#cardImageHorizontal__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="cardImageHorizontal__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;div class=&#x22;card card-horizontal h-100&#x22;&#x3E;
+&#x3C;div class=&#x22;row no-gutters&#x22;&#x3E;
+    &#x3C;div class=&#x22;col-4&#x22;&#x3E;
+        &#x3C;div class=&#x22;card-img-wrapper&#x22;&#x3E;
+            &#x3C;img src=&#x22;https://source.unsplash.com/SJGiS1JzUCc/500x334&#x22; class=&#x22;card-img&#x22; alt=&#x22;Placeholder&#x22;&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;col-8&#x22;&#x3E;
+        &#x3C;div class=&#x22;card-body&#x22;&#x3E;
+            &#x3C;h5 class=&#x22;card-title&#x22;&#x3E;Card Horizontal with Image&#x3C;/h5&#x3E;
+            &#x3C;p class=&#x22;card-text&#x22;&#x3E;This is a card with supporting text below as a natural lead-in to additional content. 
+            This content is a little bit longer.&#x3C;/p&#x3E;
+            &#x3C;p class=&#x22;card-text&#x22;&#x3E;&#x3C;small class=&#x22;text-muted&#x22;&#x3E;Last updated 3 mins ago&#x3C;/small&#x3E;&#x3C;/p&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</code></pre>
+</div>
+                            </div>
+
+                            <!-- Cards Image Overlay -->
+                            <div class="card-body mt-4" id="cards-image-overlay">
+                                <h5 class="card-title mb-1">With image overlay</h5>
+                                <p class="small text-muted">Adding image overlay inside <code>.card-img-wrapper</code> class using <code>.card-img-overlay</code></p>
+                                <div class="row justify-content-center">
+                                    <!-- Card Image Top -->
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <div class="card-img-wrapper">
+                                                <img src="https://source.unsplash.com/S-sXkRJ-9pA/500x334" class="card-img-top" alt="Placeholder">
+                                                <div class="card-img-overlay"></div>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card image overlay top</h5>
+                                                <p class="card-text">This is a card with supporting text below as a natural lead-in to additional
+                                                    content. This content is a little bit longer.</p>
+                                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card Image Bottom -->
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card image overlay bottom</h5>
+                                                <p class="card-text">This is a card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                            </div>
+                                            <div class="card-img-wrapper">
+                                                <img src="https://source.unsplash.com/Z8uJ_8PkNpg/500x334" class="card-img-bottom" alt="Placeholder">
+                                                <div class="card-img-overlay"></div>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#cardImageOverlay__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="cardImageOverlay__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;!-- Card Image Top --&#x3E;
+&#x3C;div class=&#x22;card&#x22;&#x3E;
+    &#x3C;div class=&#x22;card-img-wrapper&#x22;&#x3E;
+        &#x3C;img src=&#x22;https://source.unsplash.com/S-sXkRJ-9pA/500x334&#x22; class=&#x22;card-img-top&#x22; alt=&#x22;Placeholder&#x22;&#x3E;
+        &#x3C;div class=&#x22;card-img-overlay&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;card-body&#x22;&#x3E;
+        &#x3C;h6 class=&#x22;card-title&#x22;&#x3E;Card image at top&#x3C;/h6&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;This is a card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.&#x3C;/p&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;&#x3C;small class=&#x22;text-muted&#x22;&#x3E;Last updated 3 mins ago&#x3C;/small&#x3E;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;!-- Card Image Bottom --&#x3E;
+&#x3C;div class=&#x22;card&#x22;&#x3E;
+    &#x3C;div class=&#x22;card-body&#x22;&#x3E;
+        &#x3C;h6 class=&#x22;card-title&#x22;&#x3E;Card image at bottom&#x3C;/h6&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;This is a card with supporting text below as a natural lead-in to additional content. 
+        This content is a little bit longer.&#x3C;/p&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;&#x3C;small class=&#x22;text-muted&#x22;&#x3E;Last updated 3 mins ago&#x3C;/small&#x3E;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;card-img-wrapper&#x22;&#x3E;
+        &#x3C;img src=&#x22;https://source.unsplash.com/Z8uJ_8PkNpg/500x334&#x22; class=&#x22;card-img-bottom&#x22; alt=&#x22;Placeholder&#x22;&#x3E;
+        &#x3C;div class=&#x22;card-img-overlay&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</code></pre>
+</div>
+                            </div>
+                        </div>
+
+                        <!-- Custom Cards -->
+                        <div class="card mt-4" id="custom-card">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="mb-1 h3">Custom Cards</div>
+                                    <div class="small text-muted">Basic card images</div>
+                                </div>
+                            </div>
+                            <div class="card-body" id="cards-image-overlay">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card custom-card">
+                                            <div class="card-img">
+                                                <img src="https://source.unsplash.com/RnCPiXixooY/500x334" alt="">
+                                            </div>
+                                            <div class="card-body">
+                                                <h4 class="card-title">OpenAI Finds Machine Learning Efficiency Is
+                                                    Outpacing Moore’s Law</h4>
+                                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card custom-card">
+                                            <div class="card-img">
+                                                <img src="https://source.unsplash.com/BhLSBX-0rnM/500x334"
+                                                    alt="">
+                                            </div>
+                                            <div class="card-body">
+                                                <h4 class="card-title">Microsoft launches Project Bonsai, an AI
+                                                    development platform for industrial systems</h4>
+                                                <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                                        ago</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#cardCustom__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="cardCustom__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;div class=&#x22;card custom-card&#x22;&#x3E;
+    &#x3C;div class=&#x22;card-img&#x22;&#x3E;
+        &#x3C;img src=&#x22;https://source.unsplash.com/RnCPiXixooY/500x334&#x22; alt=&#x22;&#x22;&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;card-body&#x22;&#x3E;
+        &#x3C;h4 class=&#x22;card-title&#x22;&#x3E;OpenAI Finds Machine Learning Efficiency Is
+        Outpacing Moore&#x2019;s Law&#x3C;/h4&#x3E;
+        &#x3C;p class=&#x22;card-text&#x22;&#x3E;
+            &#x3C;small class=&#x22;text-muted&#x22;&#x3E;Last updated 3 mins ago&#x3C;/small&#x3E;
+        &#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</code></pre>
+</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidenav -->
+                    <nav class="d-none d-xl-block col-xl-2">
+                        <ul class="sidenav-sticky">
+                            <li class="nav-item">
+                                <a href="#basic-cards">Basic Cards</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#colorfull-cards">Colorfull Cards</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#cards-image">Cards Image</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#cards-image-horizontal">Card Image Horizontal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#cards-image-overlay">Card Image Overlay</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#custom-card">Custom Card</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </main>
+
+            <!-- Content Footer -->
+            <%= htmlWebpackPlugin.options.footer %>
+        </section>
+    </div>
+    <!-- load JS scripts -->
+    <script type="text/javascript" src="../../dist/js/MWadmin.bundle.js"></script>
+    <script type="text/javascript" src="../../dist/js/Vendor.bundle.js"></script>
+</body>
+</html>

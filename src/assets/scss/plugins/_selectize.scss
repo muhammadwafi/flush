@@ -1,0 +1,163 @@
+// selectize.js.scss
+$border-radius: 6;
+
+.selectize-control {
+    &.single, 
+    &.multi {
+        .selectize-input {
+            box-shadow: none!important;
+            background-color: $white;
+            background-image: none;
+            border: .075rem solid $border-color!important;
+            @include roundedCorners($border-radius);
+            padding: .5rem 1rem;
+            filter: none;
+            &:hover {
+                border-color: $border-color--hover!important;
+            }
+            &.dropdown-active,
+            &.focus {
+                box-shadow: $form-shadow;
+            }
+        }
+    }
+    &.single {
+        .selectize-input {
+            &::before,
+            &::after {
+                position: absolute;
+                width: 6px;
+                height: .1rem;
+                background: $dark;
+                border-radius: 3px;
+                transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+                content: '';
+                border: none !important;
+                right: 15px;
+                top: 50%;
+                margin-top: 0px;
+                clear: right!important;
+            }
+            &::before {
+                -webkit-transform: rotate(-45deg) translateX(2px);
+                transform: rotate(-45deg) translateX(2px);
+            }
+            &::after {
+                -webkit-transform: rotate(45deg) translateX(-2px);
+                transform: rotate(45deg) translateX(-2px);
+            }
+        }
+
+        .selectize-input {
+            &.dropdown-active {
+                @include roundedTop($border-radius);
+                border-color: $primary!important;
+                &::before,
+                &::after {
+                    background: $primary;
+                    margin-top: 0!important;
+                    top: 40%;
+                }
+            }
+            &.dropdown-active::after {
+                -webkit-transform: rotate(-45deg) translateX(-2px);
+                transform: rotate(-45deg) translateX(-2px);
+            }
+            &.dropdown-active::before {
+                right: 15px;
+                top: 40%;
+                left: auto;
+                -webkit-transform: rotate(45deg) translateX(2px);
+                transform: rotate(45deg) translateX(2px);
+            }
+        }
+    }
+    &.multi {
+        .selectize-input {
+            &.dropdown-active {
+                @include roundedTop($border-radius);
+                border-color: $primary!important;
+            }
+            [data-value],
+            > div {
+                padding: 3px 6px!important;
+                @include roundedCorners($border-radius);
+                background: $primary-lt;
+                color: $primary;
+                border: none;
+                background-image: none;
+                filter: none;
+                text-shadow: none;
+                box-shadow: none;
+                &.active {
+                    background: $primary;
+                    color: $white;
+                    box-shadow: none;
+                    border: none;
+                    filter: none;
+                }
+            }
+        }
+    }
+}
+.selectize-dropdown {
+    border-width: 0 .075rem .075rem;
+    margin: -2px 0 0;
+    &.single,
+    &.multi {
+        border-color: $primary;
+        box-shadow: $form-shadow;
+        @include roundedBottom($border-radius);
+    }
+    .create,
+    .option,
+    .optgroup-header {
+        padding: .45rem .75rem;
+        margin: 0 .35rem .15rem .35rem;
+    }
+    .create,
+    .option {
+        cursor: pointer;
+        @include roundedCorners($border-radius);
+        &.active {
+            background: $light-20;
+            color: $dark;
+        }
+    }
+    .optgroup-header {
+        font-size: $font-size-nm;
+        font-weight: $font-weight-semibold;
+        margin-left: .25rem;
+        margin-right: .25rem;
+    }    
+    .selectize-dropdown-content {
+        padding: .45rem 0;
+    }
+}
+.selectize-dropdown, 
+.selectize-input, 
+.selectize-input input {
+    font-size: $font-size-nm;
+    line-height: 1.24rem;
+}
+
+// Dropdown animation
+// .selectize-dropdown,
+// .selectize-dropdown-content {
+//     display: block!important;
+//     max-height: 0!important;
+//     opacity: 0;
+//     transition: all .125s ease-in-out;
+//     visibility: hidden!important;
+// }
+// .dropdown-active + .selectize-dropdown,
+// .dropdown-active + .selectize-dropdown > .selectize-dropdown-content {
+//     opacity: 1;
+//     visibility: visible!important;
+// }
+// .dropdown-active + .selectize-dropdown {
+//     max-height: 215px!important;
+// }
+// .dropdown-active + .selectize-dropdown > .selectize-dropdown-content {
+//     max-height: 200px!important;
+// }

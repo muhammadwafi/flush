@@ -1,0 +1,213 @@
+// card.scss
+$card-corners: 12;
+
+.card {
+    // ---
+    // General Card
+    // ---
+    border-color: $border-color;
+    box-shadow: 0 0px 2px rgba(25, 23, 99, 0.07);
+    @include roundedCorners(14);
+
+    /*----------  Card Header  ----------*/
+    .card-header,
+    .card-footer {
+        background: transparent;
+        border-color: $border-color;
+    }
+    .card-header {
+        display: flex;
+        align-items: center;
+        .card-title {
+            margin-top: 0.25rem;
+            margin-bottom: 0.25rem;
+            flex-direction: column;
+            h3, .h3 {
+                font-size: 16px;
+                font-weight: $font-weight-semibold;
+            }
+        }
+        .card-action {
+            margin-left: auto;
+        }
+        ~.card-img-wrapper > img {
+            border-radius: 0!important;
+        }
+    }
+    .card-header:first-child {
+        @include roundedTop($card-corners);
+    }
+    .card-title {
+        font-weight: $font-weight-semibold;
+    }
+
+    /*----------  Card Footer  ----------*/
+    .card-footer:last-child {
+        @include roundedBottom($card-corners);
+    }
+
+    
+    /*----------  Card body  ----------*/
+    .card-body {
+        &:last-child {
+            @include roundedBottom($card-corners);
+        }
+        .card-img {
+            @include roundedCorners($card-corners);
+        }
+    }
+
+    .card-img {
+        @include roundedCorners($card-corners);
+        min-height: 120px;
+        height: 100%;
+    }
+    .card-img-overlay {
+        background: $overlay-gradient;
+        @include roundedCorners($card-corners);
+        top: -1px;
+        right: -1px;
+        bottom: -1px;
+        left: -1px;
+    }
+    .card-link {
+        position: relative;
+        &::after {
+            content: '';
+            height: 3px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            border-bottom: 1px solid;
+            transition: 0.15s;
+        }
+        &:hover::after {
+            width: 100%;
+        }
+        &:focus::after,
+        &:active::after {
+            width: 100%;
+        }
+    }
+}
+
+// ---
+// Card Horizontal
+// ---
+.card.card-horizontal {
+    .card-img {
+        @include roundedRight(0);
+    }
+    .card-body {
+        height: 100%;
+    }
+    .card-img ~.card-img-overlay {
+        border-radius: #{$card-corners}px 0 0 #{$card-corners}px!important;
+    }
+}
+
+// ---
+// Card Image Variant
+// ---
+.card-img-wrapper {
+    position: relative;
+    margin-right: -1px;
+    margin-top: -1px;
+    margin-left: -1px;
+    margin-bottom: -1px;
+    display: block;
+    overflow: hidden;
+    height: calc(100% + 1px);
+
+    img {
+        @include transition(all .15s ease-in-out);
+        height: 200px;
+    }
+    .card-img-overlay {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: $overlay-top;
+    }
+}
+.card-img,
+.card-img-top,
+.card-img-bottom {
+    background-color: $light;
+    object-fit: cover;
+    background-size: cover;
+    position: relative;
+    ~.card-header {
+        border-radius: 0!important;
+    }
+}
+.card-img-top,
+.card-img-top ~.card-img-overlay {
+    @include roundedTop($card-corners); 
+}
+.card-img-bottom,
+.card-img-bottom ~.card-img-overlay {
+    @include roundedBottom($card-corners);
+}
+
+.card-img-bottom,
+.card-img-bottom ~.card-img-overlay {
+    @include roundedBottom($card-corners);
+}
+
+.card-img-bottom ~.card-img-overlay {
+    background: $overlay-bottom;
+}
+
+.card.custom-card {
+    @include rfs(22rem, min-height);
+    .card-img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        > img {
+            width: auto;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%) scale(1.25);
+            -moz-transform: translate(-50%, -50%) scale(1.25);
+            -o-transform: translate(-50%, -50%) scale(1.25);
+            transform: translate(-50%, -50%) scale(1.25);
+        }
+    }
+    .card-body {
+        @include roundedCorners($card-corners);
+        position: absolute;
+        z-index: 2;
+        background: $white;
+        bottom: 0;
+        box-shadow: 0 8px 14px -4px rgba(29, 33, 50, 0.25);
+        margin: 10px;
+        .card-title {
+            overflow: hidden;
+            position: relative;
+            line-height: 1.2em;
+            max-height: 3.6em;
+            height: 3.6em;
+            margin-right: -1em;
+            padding-right: 1em;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+        }
+    }
+}

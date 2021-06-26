@@ -1,0 +1,122 @@
+// avatar.scss
+$ava-size-classlist: (
+    "xs": 16px,
+    "sm": 24px,
+    "md": 48px,
+    "lg": 96px,
+    "xl": 128px,
+);
+$ava-initial-fsize: (
+    "xs": .35rem,
+    "sm": .5rem,
+    "md": 1.15rem,
+    "lg": 2.25rem,
+    "xl": 3.25rem,
+);
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: $light;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all .25s ease-in-out;
+    pointer-events: none;
+    .initial {
+        font-weight: $font-weight-semibold;
+        font-size: .725rem;
+        -webkit-user-select: none;      
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    // generate avatar size
+    @each $size, $values in $ava-size-classlist {
+        &.avatar-#{$size} {
+            width: $values!important;
+            height: $values!important;
+            .initial {
+                font-size: map-get($map: $ava-initial-fsize, $key: "#{$size}");
+            }
+        }
+    }
+}
+
+.avatar-wrapper {
+    position: relative;    
+    display: block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    &:hover {
+        .avatar {
+            -webkit-filter: brightness(0.875);
+            filter: brightness(0.875);
+        }
+    }
+}
+
+.avatar-group {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 0;
+    .avatar-wrapper {
+        border: 2px solid $white;
+        background-color: $white;
+        border-radius: 50%;
+        @include transition(all .15s ease-in-out);
+        &:not(:first-of-type) {
+            margin-left: -8px;
+        }
+        &:hover,
+        &:active,
+        &:focus-within {
+            z-index: 100!important;
+        }
+        a {
+            border-radius: inherit;
+            display: flex;
+            color: $dark;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.avatar-list-group {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    .avatar-wrapper {
+        &:hover {
+            .avatar {
+                -webkit-filter: none!important;
+                filter: none!important;
+            }
+        }
+    }
+    .avatar-item {
+        @include roundedCorners(10);
+        display: flex;
+        padding: 12px 16px;
+        margin-bottom: 2px;
+        flex-direction: row;
+        color: $dark;
+        >*:not(:last-child) {
+            margin-right: 10px;
+        }
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $light;
+            text-decoration: none!important;
+        }
+    }
+}

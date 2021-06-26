@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= htmlWebpackPlugin.options.title %> | MWadmin</title>
+    <%= htmlWebpackPlugin.options.metaHeader %>
+</head>
+<body>
+    <div class="fl-app" id="app">
+        <!-- Sidebar -->
+        <%= htmlWebpackPlugin.options.sidebarNav %>
+
+        <!-- Content -->
+        <section class="fl-content">
+            <!-- Content Header -->
+            <%= htmlWebpackPlugin.options.contentHeader %>
+
+            <!-- Main Content -->
+            <main class="container-fluid" role="main">
+                <div class="row">
+                    <div class="col-xl-10">
+
+                        <!-- Basic Modal -->
+                        <div class="card" id="basic-modal">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="mb-1 h3">Basic Modal</div>
+                                    <div class="small text-muted">Using default Bootstrap JavaScript modal plugin</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Please read the official <a href="https://getbootstrap.com/docs/4.4/components/modal/" target="blank">Bootstrap documentation</a> for a full list of options.</p>
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#exampleModal">
+                                            Launch demo modal
+                                        </button>
+                                    </div>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                    <button type="button" class="close" 
+                                                    data-dismiss="modal" aria-label="Close">
+                                                    <i data-feather="x"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    ...
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default"
+                                                        data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save
+                                                        changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#modalBasic__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="modalBasic__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;!-- Button trigger modal --&#x3E;
+&#x3C;button type=&#x22;button&#x22; class=&#x22;btn btn-primary&#x22; data-toggle=&#x22;modal&#x22;
+    data-target=&#x22;#exampleModal&#x22;&#x3E;
+    Launch demo modal
+&#x3C;/button&#x3E;
+
+&#x3C;!-- Modal --&#x3E;
+&#x3C;div class=&#x22;modal fade&#x22; id=&#x22;exampleModal&#x22; tabindex=&#x22;-1&#x22; role=&#x22;dialog&#x22;
+    aria-labelledby=&#x22;exampleModalLabel&#x22; aria-hidden=&#x22;true&#x22;&#x3E;
+    &#x3C;div class=&#x22;modal-dialog&#x22; role=&#x22;document&#x22;&#x3E;
+        &#x3C;div class=&#x22;modal-content&#x22;&#x3E;
+            &#x3C;div class=&#x22;modal-header&#x22;&#x3E;
+                &#x3C;h5 class=&#x22;modal-title&#x22; id=&#x22;exampleModalLabel&#x22;&#x3E;Modal title&#x3C;/h5&#x3E;
+                &#x3C;button type=&#x22;button&#x22; class=&#x22;close&#x22; 
+                data-dismiss=&#x22;modal&#x22; aria-label=&#x22;Close&#x22;&#x3E;
+                    &#x3C;i data-feather=&#x22;x&#x22;&#x3E;&#x3C;/i&#x3E;
+                &#x3C;/button&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;modal-body&#x22;&#x3E;
+                ...
+            &#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;modal-footer&#x22;&#x3E;
+                &#x3C;button type=&#x22;button&#x22; class=&#x22;btn btn-default&#x22;
+                    data-dismiss=&#x22;modal&#x22;&#x3E;Close&#x3C;/button&#x3E;
+                &#x3C;button type=&#x22;button&#x22; class=&#x22;btn btn-primary&#x22;&#x3E;Save
+                    changes&#x3C;/button&#x3E;
+            &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</code></pre>
+</div>
+                            </div>
+                        </div>
+
+                        <!-- Confirmation Modal -->
+                        <div class="card mt-3" id="confirmation-modal">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="mb-1 h3">Confirmation Modal</div>
+                                    <div class="small text-muted">Confirmation modals by adding <code>.modals-confirmation</code> class right after <code>.modal-dialog</code></div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <p class="card-text">Use this confirmation modals to your site for data deletion confirmation or something else.</p>
+                                    <div class="col-12 text-center">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-danger" data-toggle="modal"
+                                        data-target="#deleteModal"> <i data-feather="trash-2"></i> Delete
+                                        </button>
+                                    </div>
+                                    <!-- Modal Delete -->
+                                    <div class="modal fade" id="deleteModal" tabindex="-1" data-backdrop="static" role="dialog"
+                                        aria-labelledby="deleteModal" aria-hidden="true">
+                                        <div class="modal-dialog modal-confirmation" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="modal-icon">
+                                                        <i data-feather="alert-circle" class="fill-danger"></i>
+                                                    </div>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                                                </div>
+                                                <div class="modal-body text-center">
+                                                    <p class="mb-0">Are you sure want to delete this records? This process cannot be undone.</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-link"
+                                                        data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-danger">Delete</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#modalConfirmation__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="modalConfirmation__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;div class=&#x22;modal fade&#x22; id=&#x22;deleteModal&#x22; tabindex=&#x22;-1&#x22; data-backdrop=&#x22;static&#x22; role=&#x22;dialog&#x22;
+    aria-labelledby=&#x22;deleteModal&#x22; aria-hidden=&#x22;true&#x22;&#x3E;
+    &#x3C;div class=&#x22;modal-dialog modal-confirmation&#x22; role=&#x22;document&#x22;&#x3E;
+        &#x3C;div class=&#x22;modal-content&#x22;&#x3E;
+            &#x3C;div class=&#x22;modal-header&#x22;&#x3E;
+                &#x3C;div class=&#x22;modal-icon&#x22;&#x3E;
+                    &#x3C;i data-feather=&#x22;alert-circle&#x22; class=&#x22;fill-danger&#x22;&#x3E;&#x3C;/i&#x3E;
+                &#x3C;/div&#x3E;
+                &#x3C;h5 class=&#x22;modal-title&#x22; id=&#x22;exampleModalLabel&#x22;&#x3E;Are you sure?&#x3C;/h5&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;modal-body text-center&#x22;&#x3E;
+                &#x3C;p class=&#x22;mb-0&#x22;&#x3E;Are you sure want to delete this records? This process cannot be undone.&#x3C;/p&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;modal-footer&#x22;&#x3E;
+                &#x3C;button type=&#x22;button&#x22; class=&#x22;btn btn-link&#x22;
+                    data-dismiss=&#x22;modal&#x22;&#x3E;Cancel&#x3C;/button&#x3E;
+                &#x3C;button type=&#x22;button&#x22; class=&#x22;btn btn-danger&#x22;&#x3E;Delete&#x3C;/button&#x3E;
+            &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</code></pre>
+</div>
+                            </div>
+
+                            <!-- Custom Confirmation Modal -->
+                            <div class="card-body mt-4"  id="custom-confirmation-modal">
+                                <h5 class="card-title mb-1">Custom Confirmation Modal</h5>
+                                <p class="small text-muted">Play around with confirmation modals icons and colors, match it with your confirmation dialogs type.</p>
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary m-1" data-toggle="modal"
+                                        data-target="#updateModal">Update Settings</button>
+
+                                        <button type="button" class="btn btn-success m-1" data-toggle="modal"
+                                        data-target="#bookingModal">Book Ticket</button>
+
+                                        <button type="button" class="btn btn-warning m-1" data-toggle="modal"
+                                        data-target="#systemModal">Restart System
+                                        </button>
+                                    </div>
+
+                                    <!-- Modal Update -->
+                                    <div class="modal fade" id="updateModal" tabindex="-1" data-backdrop="static" role="dialog"
+                                    aria-labelledby="updateModal" aria-hidden="true">
+                                        <div class="modal-dialog modal-confirmation" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="modal-icon">
+                                                        <i data-feather="settings" class="fill-primary"></i>
+                                                    </div>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Settings Update</h5>
+                                                </div>
+                                                <div class="modal-body text-center">
+                                                    <p class="mb-0">You are about to override your default settings, do you wish to continue?</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-link"
+                                                        data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-primary">Continue</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Modal Booking -->
+                                    <div class="modal fade" id="bookingModal" tabindex="-1" data-backdrop="static" role="dialog"
+                                    aria-labelledby="bookingModal" aria-hidden="true">
+                                        <div class="modal-dialog modal-confirmation" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="modal-icon">
+                                                        <i data-feather="check-circle" class="fill-success"></i>
+                                                    </div>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Booking Success!</h5>
+                                                </div>
+                                                <div class="modal-body text-center">
+                                                    <p class="mb-0">Your booking has been confirmed. <br>Check your emails for details</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-success" data-dismiss="modal">Continue</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Modal Restart System -->
+                                    <div class="modal fade" id="systemModal" tabindex="-1" data-backdrop="static" role="dialog"
+                                    aria-labelledby="systemModal" aria-hidden="true">
+                                        <div class="modal-dialog modal-confirmation" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="modal-icon">
+                                                        <i data-feather="cpu" class="fill-warning"></i>
+                                                    </div>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Restart System?</h5>
+                                                </div>
+                                                <div class="modal-body text-center">
+                                                    <p class="mb-0">Your system is still running some process. <br>Restart it anyway?</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-link"
+                                                    data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-warning" data-dismiss="modal">Restart</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fixed Modal -->
+                        <div class="card mt-3" id="fixed-modal">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="mb-1 h3">Fixed Modal</div>
+                                    <div class="small text-muted">Fixed side modals by adding <code>.modal-fixed-*</code> class</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 article">
+                                        <p class="card-text">Fixed left, top, right, and bottom modals. Classes available for this custom modals are:
+                                        </p>
+                                        <ul>
+                                            <li><code>.modal-fixed-left</code></li>
+                                            <li><code>.modal-fixed-top</code></li>
+                                            <li><code>.modal-fixed-right</code></li>
+                                            <li><code>.modal-fixed-bottom</code></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <!-- Button trigger modal fixed left -->
+                                        <button type="button" class="btn btn-default m-1" data-toggle="modal"
+                                        data-target="#fixedLeftModal">Fixed Left</button>
+                                        <!-- Button trigger modal fixed top -->
+                                        <button type="button" class="btn btn-default m-1" data-toggle="modal"
+                                        data-target="#fixedTopModal">Fixed Top</button>
+                                        <!-- Button trigger modal fixed right -->
+                                        <button type="button" class="btn btn-default m-1" data-toggle="modal"
+                                        data-target="#fixedRightModal">Fixed Right</button>
+                                        <!-- Button trigger modal fixed bottom -->
+                                        <button type="button" class="btn btn-default m-1" data-toggle="modal"
+                                        data-target="#fixedBottomModal">Fixed Bottom</button>
+                                    </div>
+                                    <!-- Modal Fixed Left -->
+                                    <div class="modal fade" id="fixedLeftModal" tabindex="-1" role="dialog" aria-labelledby="fixedLeftModal" aria-hidden="true">
+                                        <div class="modal-dialog modal-fixed-left" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modal Fixed Left</h5>
+                                                </div>
+                                                <div class="modal-body text-center">
+                                                    <p class="mb-0">This is your content area</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-link"
+                                                        data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal Fixed Right -->
+                                    <div class="modal fade" id="fixedRightModal" tabindex="-1" role="dialog" aria-labelledby="fixedRightModal" aria-hidden="true">
+                                        <div class="modal-dialog modal-fixed-right" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modal Fixed Right</h5>
+                                                </div>
+                                                <div class="modal-body text-center">
+                                                    <p class="mb-0">This is your content area</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-link"
+                                                        data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal Fixed Top -->
+                                    <div class="modal fade" id="fixedTopModal" tabindex="-1" role="dialog" aria-labelledby="fixedTopModal" aria-hidden="true">
+                                        <div class="modal-dialog modal-fixed-top" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modal Fixed Top</h5>
+                                                </div>
+                                                <div class="modal-body text-center">
+                                                    <p class="mb-0">This is your content area</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-link"
+                                                        data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal Fixed Bottom -->
+                                    <div class="modal fade" id="fixedBottomModal" tabindex="-1" role="dialog" aria-labelledby="fixedBottomModal" aria-hidden="true">
+                                        <div class="modal-dialog modal-fixed-bottom" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modal Fixed Bottom</h5>
+                                                </div>
+                                                <div class="modal-body text-center">
+                                                    <p class="mb-0">This is your content area</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-link"
+                                                        data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fl-codebox">
+                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#modalFixed__code">
+                                    <i data-feather="code" class="icon-xs"></i> Show Code
+                                </button>
+                            </div>
+                            <div class="collapse" id="modalFixed__code">
+<div class="syntax-highlight">
+<pre><code class="language-html">&#x3C;!-- Modal Fixed Left --&#x3E;
+&#x3C;div class=&#x22;modal fade&#x22; id=&#x22;fixedLeftModal&#x22; tabindex=&#x22;-1&#x22; role=&#x22;dialog&#x22; aria-labelledby=&#x22;fixedLeftModal&#x22; aria-hidden=&#x22;true&#x22;&#x3E;
+    &#x3C;div class=&#x22;modal-dialog modal-fixed-left&#x22; role=&#x22;document&#x22;&#x3E;
+        &#x3C;div class=&#x22;modal-content&#x22;&#x3E;
+            ...
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;!-- Modal Fixed Right --&#x3E;
+&#x3C;div class=&#x22;modal fade&#x22; id=&#x22;fixedRightModal&#x22; tabindex=&#x22;-1&#x22; role=&#x22;dialog&#x22; aria-labelledby=&#x22;fixedRightModal&#x22; aria-hidden=&#x22;true&#x22;&#x3E;
+    &#x3C;div class=&#x22;modal-dialog modal-fixed-right&#x22; role=&#x22;document&#x22;&#x3E;
+        &#x3C;div class=&#x22;modal-content&#x22;&#x3E;
+            ...
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;!-- Modal Fixed Top --&#x3E;
+&#x3C;div class=&#x22;modal fade&#x22; id=&#x22;fixedTopModal&#x22; tabindex=&#x22;-1&#x22; role=&#x22;dialog&#x22; aria-labelledby=&#x22;fixedTopModal&#x22; aria-hidden=&#x22;true&#x22;&#x3E;
+    &#x3C;div class=&#x22;modal-dialog modal-fixed-top&#x22; role=&#x22;document&#x22;&#x3E;
+        &#x3C;div class=&#x22;modal-content&#x22;&#x3E;
+            ...
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;!-- Modal Fixed Bottom --&#x3E;
+&#x3C;div class=&#x22;modal fade&#x22; id=&#x22;fixedBottomModal&#x22; tabindex=&#x22;-1&#x22; role=&#x22;dialog&#x22; aria-labelledby=&#x22;fixedBottomModal&#x22; aria-hidden=&#x22;true&#x22;&#x3E;
+    &#x3C;div class=&#x22;modal-dialog modal-fixed-bottom&#x22; role=&#x22;document&#x22;&#x3E;
+        &#x3C;div class=&#x22;modal-content&#x22;&#x3E;
+            ...
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</code></pre>
+</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Sidenav -->
+                    <nav class="d-none d-xl-block col-xl-2">
+                        <ul class="sidenav-sticky">
+                            <li class="nav-item">
+                                <a href="#basic-modal">Basic Modals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#confirmation-modal">Confirmation Modal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#custom-confirmation-modal">Custom Confirmation Modal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#fixed-modal">Fixed Modal</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </main>
+
+            <!-- Content Footer -->
+            <%= htmlWebpackPlugin.options.footer %>
+        </section>
+    </div>
+    <!-- load JS scripts -->
+</body>
+</html>

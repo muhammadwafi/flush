@@ -1,0 +1,189 @@
+// theme.scss
+
+// ==========================================================================
+// Basic Template Color Variables
+// ==========================================================================
+
+// #6320EE - purple dark
+// #8075FF - purple light
+
+// ---
+// Default
+// ---
+$primary  : #0053F2;
+$accent   : #ef0063;
+$secondary: #888fac;
+$info     : #009EFF;
+// $success  : #48C641;
+$success  : #1daf24;
+$warning  : #FF9800;
+$danger   : #F71735;
+// $dark     : #27233A;
+$dark     : #363b66;
+$light    : #ebedf5;
+// $light    : #f2f3f5;
+$light-20 : #dcdfeb;
+$light-30 : #bbc0d3;
+$white    : #ffffff;
+$black    : #000000;
+
+// ---
+// Hover State
+// ---
+$primary--hover   : #2f2fff;
+$accent--hover    : #df014b;
+$secondary--hover : #cad1e2;
+$info--hover      : #0053cf;
+$success--hover   : #2eac34;
+$warning--hover   : #f07809;
+$danger--hover    : #e40422;
+$dark--hover      : #151927;
+$light--hover     : #e7ebff;
+
+// ---
+// Lighter Color
+// ---
+$primary-lt  : #cedfff;
+$accent-lt   : #ffcadc;
+$secondary-lt: #e9edf8;
+$info-lt     : #c7eaff;
+$success-lt  : #d1fad2;
+$warning-lt  : #ffecb3;
+$danger-lt   : #ffcdd2;
+// $dark-lt     : #d9dae6;
+$dark-lt     : #d7d9ec;
+$light-lt    : #f7fafd;
+
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+    (
+        "primary":    $primary,
+        "secondary":  $secondary,
+        "success":    $success,
+        "info":       $info,
+        "warning":    $warning,
+        "danger":     $danger,
+        "light":      $light,
+        "dark":       $dark
+    ),
+    $theme-colors
+);
+
+$theme-lt-colors: () !default;
+$theme-lt-colors: map-merge(
+    (
+        "primary": ( 
+            "base": $primary-lt,
+            "base-color": $primary,
+        ),
+        "dark": ( 
+            "base": $dark-lt,
+            "base-color": $dark,
+        ),
+        "secondary": ( 
+            "base": $secondary-lt,
+            "base-color": $secondary,
+        ),
+        "light": ( 
+            "base": $light-lt,
+            "base-color": $dark,
+        ),
+        "success": ( 
+            "base": $success-lt,
+            "base-color": $success,
+        ),
+        "info": ( 
+            "base": $info-lt,
+            "base-color": $info,
+        ),
+        "danger": ( 
+            "base": $danger-lt,
+            "base-color": $danger,
+        ),
+        "warning": ( 
+            "base": $warning-lt,
+            "base-color": $warning,
+        ),
+    ),
+    $theme-lt-colors
+);
+
+$theme-hover-colors: () !default;
+$theme-hover-colors: map-merge(
+    (
+        "primary":    $primary--hover,
+        "secondary":  $secondary--hover,
+        "success":    $success--hover,
+        "info":       $info--hover,
+        "warning":    $warning--hover,
+        "danger":     $danger--hover,
+        "light":      $light--hover,
+        "dark":       $dark--hover
+    ),
+    $theme-hover-colors
+);
+
+// ==========================================================================
+// Other Template Color Variables
+// ==========================================================================
+$text-muted             :rgba(35, 40, 70, 0.6);
+$text-muted--hover      :#4e5572;
+$border-color           :rgba(14, 19, 58, 0.175);
+$border-color--hover    :rgba(14, 19, 58, 0.45);
+$shadow-color           :rgba(15, 9, 47, 0.15);
+$form-shadow            : inset 0 1px 2px rgba(14, 19, 58,.15);
+$overlay-gradient       : linear-gradient(180deg, rgba(6, 20, 49, 0.5), #000621);
+$overlay-top            : linear-gradient(180deg, transparent 35%, #000621);
+$overlay-bottom         : linear-gradient(180deg, #000621, transparent 35%);
+
+
+// ==========================================================================
+// Font Variables
+// ==========================================================================
+
+// ---
+// Font Stack
+// ---
+// @import url('https://fonts.googleapis.com/css?family=Cabin:400,500,600,700');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@450;500;600;700&display=swap');
+$font-family: "Inter","Helvetica Neue","Helvetica","Arial",sans-serif;
+
+// ---
+// Font Sizing
+// ---
+$font-size-xl   : 2.25rem;
+$font-size-lg   : 1.5rem;
+$font-size-md   : 1.25rem;
+$font-size-nm   : .825rem;
+$font-size-sm   : .65rem;
+$font-size-xs   : .55rem;
+
+$font-sizing: () !default;
+$font-sizing: map-merge(
+    (
+        "xl"    : $font-size-xl,
+        "lg"    : $font-size-lg,
+        "md"    : $font-size-md,
+        "nm"    : $font-size-nm,
+        "sm"    : $font-size-sm,
+        "xs"    : $font-size-xs
+    ),
+    $font-sizing
+);
+
+// ---
+// Font Weight
+// ---
+$font-weight-light      : 300; 
+$font-weight-normal     : 400; 
+$font-weight-medium     : 500; 
+$font-weight-semibold   : 600; 
+$font-weight-bold       : 700; 
+$font-weight-extrabold  : 800; 
+
+
+// ==========================================================================
+// Other Variables
+// ==========================================================================
+$container-width: 1080px;

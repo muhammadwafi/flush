@@ -1,0 +1,254 @@
+// button.scss
+
+@mixin btnStyle($bg:null, $color:false) {
+    background: $bg;
+    border-color: $bg;
+    @if($color) {
+        color: $color;
+    }
+}
+@mixin btnOutlineStyle($outline:null) {
+    border-color: $outline;
+    color: $outline;
+}
+
+$btn-lg-padding : .75rem 1.75rem;
+$btn-md-padding : .65rem 1.25rem;;
+$btn-padding    : .55rem 1rem;
+$btn-sm-padding : .25rem .5rem;
+$btn-xs-padding : .15rem .35rem;
+
+/*----------  Button Sizing  ----------*/
+.btn {
+    @include roundedCorners(3);
+    padding: $btn-padding;
+    font-size: inherit;
+    font-weight: $font-weight-medium;
+    // disabled
+    @include disabled {
+        box-shadow: none!important;
+        outline: none!important;
+    }
+    // hover and focusing state
+    @include hover-focus {
+        box-shadow: none!important;
+        outline: none!important;
+    }
+    &-fw {
+        min-width: 7rem;
+    }
+    // ---
+    // Button Large
+    // ---
+    &-lg {
+        padding: $btn-lg-padding;
+        font-size: $font-size-m;
+    }
+    // ---
+    // Button Medium
+    // ---
+    &-md {
+        padding: $btn-md-padding;
+        font-size: 1rem;
+    }
+    // ---
+    // Button Small
+    // ---
+    &-sm {
+        padding: $btn-sm-padding;
+        font-size: $font-size-sm;
+    }
+    // ---
+    // Button Extra Small
+    // ---
+    &-xs {
+        padding: $btn-xs-padding;
+        font-size: $font-size-xs;
+    }
+
+    > i {
+        display: inline-block;
+        vertical-align: -.1rem;
+        margin-right: .25rem;
+        margin-left: -.15rem;
+    }
+
+}
+
+/*----------  Button Styles  ----------*/
+@each $color, $values in $theme-colors {
+    .btn-#{$color} {
+        @if $color == "secondary" or $color == "light" {
+            @include button-styles($values, $dark);
+        } @else {
+            @include button-styles($values, $white);
+        }
+    }
+}
+
+/*----------  Button Outline Style  ----------*/
+.btn-outline {
+    // ---
+    // OUTLINE PRIMARY
+    // ---
+    &-primary {
+        @include btnOutlineStyle($primary);
+        // disabled
+        @include disabled {
+            @include btnOutlineStyle($primary--hover);
+        }
+        // hover and focusing state
+        @include hover-focus {
+            @include btnStyle($primary, $white);
+        }
+    }
+    
+    // ---
+    // OUTLINE SECONDARY
+    // ---
+    &-secondary {
+        @include btnOutlineStyle(#7e879c);
+        // disabled
+        @include disabled {
+            @include btnOutlineStyle(#7e879c);
+        }
+        // hover and focusing state
+        @include hover-focus {
+            @include btnStyle($secondary--hover, $dark);
+        }
+    }
+    
+    // ---
+    // OUTLINE DARK
+    // ---
+    &-dark {
+        @include btnOutlineStyle(#3a3a5a);
+        // disabled
+        @include disabled {
+            @include btnOutlineStyle($dark--hover);
+        }
+        // hover and focusing state
+        @include hover-focus {
+            @include btnStyle(#3a3a5a, $white);
+        }
+    }
+    
+    // ---
+    // OUTLINE ACCENT
+    // ---
+    &-accent {
+        @include btnOutlineStyle($accent);
+        // disabled
+        @include disabled {
+            @include btnOutlineStyle($accent--hover);
+        }
+        // hover and focusing state
+        @include hover-focus {
+            @include btnStyle($accent, $white);
+        }
+    }
+    
+    // ---
+    // OUTLINE SUCCESS
+    // ---
+    &-success {
+        @include btnOutlineStyle($success);
+        // disabled
+        @include disabled {
+            @include btnOutlineStyle($success--hover);
+        }
+        // hover and focusing state
+        @include hover-focus {
+            @include btnStyle($success, $white);
+        }
+    }
+    
+    // ---
+    // OUTLINE INFO
+    // ---
+    &-info {
+        @include btnOutlineStyle($info);
+        // disabled
+        @include disabled {
+            @include btnOutlineStyle($info--hover);
+        }
+        // hover and focusing state
+        @include hover-focus {
+            @include btnStyle($info, $white);
+        }
+    }
+    
+    // ---
+    // OUTLINE DANGER
+    // ---
+    &-danger {
+        @include btnOutlineStyle($danger);
+        // disabled
+        @include disabled {
+            @include btnOutlineStyle($danger--hover);
+        }
+        // hover and focusing state
+        @include hover-focus {
+            @include btnStyle($danger, $white);
+        }
+    }
+    
+    // ---
+    // OUTLINE WARNING
+    // ---
+    &-warning {
+        @include btnOutlineStyle($warning);
+        // disabled
+        @include disabled {
+            @include btnOutlineStyle($warning--hover);
+        }
+        // hover and focusing state
+        @include hover-focus {
+            @include btnStyle($warning, $white);
+        }
+    }
+    
+    // ---
+    // OUTLINE LIGHT
+    // ---
+    &-light {
+        @include btnOutlineStyle($light);
+        // disabled
+        @include disabled {
+            @include btnOutlineStyle($light--hover);
+        }
+        // hover and focusing state
+        @include hover-focus {
+            @include btnStyle($light, $white);
+        }
+    }
+}
+
+.btn-group {
+    > .btn {
+        @include roundedCorners(3);
+    }
+    &-lg > .btn, .btn-lg {
+        padding: $btn-lg-padding;
+        font-size: $font-size-m;
+    }
+    &-md > .btn, .btn-md {
+        padding: $btn-md-padding;
+        font-size: 1rem;
+    }
+    &-sm > .btn, .btn-sm {
+        padding: $btn-sm-padding;
+        font-size: $font-size-sm;
+    }
+    &-xs > .btn, .btn-xs {
+        padding: $btn-xs-padding;
+        font-size: $font-size-xs;
+    }
+}
+
+.btn-link {
+    color: $primary;
+    @include hover-focus {
+        color: $primary--hover;
+    }
+}
