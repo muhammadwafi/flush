@@ -11,7 +11,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/muhammadwafi/MWadmin.git"
+		"url": "git+https://github.com/muhammadwafi/flush.git"
 	},
 	"keywords": [
 		"bootstrap",
@@ -21,9 +21,9 @@
 	"author": "Muhammad Wafi (www.mwprolabs.com)",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/muhammadwafi/MWadmin/issues"
+		"url": "https://github.com/muhammadwafi/flush/issues"
 	},
-	"homepage": "https://github.com/muhammadwafi/MWadmin#readme",
+	"homepage": "https://github.com/muhammadwafi/flush#readme",
 	"browserslist": [
 		"defaults",
 		"not ie < 11",
