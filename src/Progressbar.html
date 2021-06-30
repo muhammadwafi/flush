@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= htmlWebpackPlugin.options.title %> | MWadmin</title>
+    <title><%= htmlWebpackPlugin.options.title %> | Flush</title>
     <%= htmlWebpackPlugin.options.metaHeader %>
 </head>
 <body>
@@ -16,145 +16,9 @@
 
             <!-- Main Content -->
             <main class="container-fluid" role="main">
-                <div class="row">
-                    <div class="col-xl-10">
-                        <!-- Basic -->
-                        <div class="card" id="pagination">
-                            <div class="card-header">
-                                <div class="card-title">
-                                    <div class="mb-1 h3">Progressbar</div>
-                                    <div class="small text-muted">Pagination nav using <code>.pagination</code> class on unordered lists element</div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <nav aria-label="pagination">
-                                            <ul class="pagination justify-content-center">
-                                                <li class="page-item disabled">
-                                                    <a class="page-link" href="#">
-                                                        <i data-feather="chevron-left"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#">
-                                                        <i data-feather="chevron-right"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fl-codebox">
-                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#paginationBasic__code">
-                                    <i data-feather="code" class="icon-xs"></i> Show Code
-                                </button>
-                            </div>
-                            <div class="collapse" id="paginationBasic__code">
-<div class="syntax-highlight">
-<pre><code class="language-html">&#x3C;nav aria-label=&#x22;pagination&#x22;&#x3E;
-    &#x3C;ul class=&#x22;pagination justify-content-center&#x22;&#x3E;
-        &#x3C;li class=&#x22;page-item disabled&#x22;&#x3E;
-            &#x3C;a class=&#x22;page-link&#x22; href=&#x22;#&#x22;&#x3E;
-                &#x3C;i data-feather=&#x22;chevron-left&#x22;&#x3E;&#x3C;/i&#x3E;
-            &#x3C;/a&#x3E;
-        &#x3C;/li&#x3E;
-        &#x3C;li class=&#x22;page-item active&#x22;&#x3E;&#x3C;a class=&#x22;page-link&#x22; href=&#x22;#&#x22;&#x3E;1&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-        &#x3C;li class=&#x22;page-item&#x22;&#x3E;&#x3C;a class=&#x22;page-link&#x22; href=&#x22;#&#x22;&#x3E;2&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-        &#x3C;li class=&#x22;page-item&#x22;&#x3E;&#x3C;a class=&#x22;page-link&#x22; href=&#x22;#&#x22;&#x3E;3&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-        &#x3C;li class=&#x22;page-item&#x22;&#x3E;&#x3C;a class=&#x22;page-link&#x22; href=&#x22;#&#x22;&#x3E;4&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-        &#x3C;li class=&#x22;page-item&#x22;&#x3E;&#x3C;a class=&#x22;page-link&#x22; href=&#x22;#&#x22;&#x3E;5&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-        &#x3C;li class=&#x22;page-item&#x22;&#x3E;
-            &#x3C;a class=&#x22;page-link&#x22; href=&#x22;#&#x22;&#x3E;
-                &#x3C;i data-feather=&#x22;chevron-right&#x22;&#x3E;&#x3C;/i&#x3E;
-            &#x3C;/a&#x3E;
-        &#x3C;/li&#x3E;
-    &#x3C;/ul&#x3E;
-&#x3C;/nav&#x3E;
-</code></pre>
-</div>
-                            </div>
-
-                            <!-- Small Size Pagination -->
-                            <div class="card-body mt-4" id="pagination-small">
-                                <h5 class="card-title mb-1">Small Size</h5>
-                                <p class="small text-muted">Small pagination size by adding <code>.pagination-sm</code> class right after <code>.pagination</code> class.</p>
-                                <div class="row py-3">
-                                    <div class="col-12">
-                                        <nav aria-label="pagination">
-                                            <ul class="pagination pagination-sm justify-content-center">
-                                                <li class="page-item disabled">
-                                                    <a class="page-link" href="#">
-                                                        <i data-feather="chevron-left"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#">
-                                                        <i data-feather="chevron-right"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fl-codebox">
-                                <button class="fl-codebox__btn" data-toggle="collapse" data-target="#paginationSmall__code">
-                                    <i data-feather="code" class="icon-xs"></i> Show Code
-                                </button>
-                            </div>
-                            <div class="collapse" id="paginationSmall__code">
-<div class="syntax-highlight">
-<pre><code class="language-html">&#x3C;nav aria-label=&#x22;pagination&#x22;&#x3E;
-    &#x3C;ul class=&#x22;pagination pagination-sm justify-content-center&#x22;&#x3E;
-        &#x3C;li class=&#x22;page-item disabled&#x22;&#x3E;
-            &#x3C;a class=&#x22;page-link&#x22; href=&#x22;#&#x22;&#x3E;
-                &#x3C;i data-feather=&#x22;chevron-left&#x22;&#x3E;&#x3C;/i&#x3E;
-            &#x3C;/a&#x3E;
-        &#x3C;/li&#x3E;
-        &#x3C;li class=&#x22;page-item active&#x22;&#x3E;&#x3C;a class=&#x22;page-link&#x22; href=&#x22;#&#x22;&#x3E;1&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-        &#x3C;li class=&#x22;page-item&#x22;&#x3E;&#x3C;a class=&#x22;page-link&#x22; href=&#x22;#&#x22;&#x3E;2&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-        &#x3C;li class=&#x22;page-item&#x22;&#x3E;&#x3C;a class=&#x22;page-link&#x22; href=&#x22;#&#x22;&#x3E;3&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-        &#x3C;li class=&#x22;page-item&#x22;&#x3E;&#x3C;a class=&#x22;page-link&#x22; href=&#x22;#&#x22;&#x3E;4&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-        &#x3C;li class=&#x22;page-item&#x22;&#x3E;&#x3C;a class=&#x22;page-link&#x22; href=&#x22;#&#x22;&#x3E;5&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-        &#x3C;li class=&#x22;page-item&#x22;&#x3E;
-            &#x3C;a class=&#x22;page-link&#x22; href=&#x22;#&#x22;&#x3E;
-                &#x3C;i data-feather=&#x22;chevron-right&#x22;&#x3E;&#x3C;/i&#x3E;
-            &#x3C;/a&#x3E;
-        &#x3C;/li&#x3E;
-    &#x3C;/ul&#x3E;
-&#x3C;/nav&#x3E;
-</code></pre>
-</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sidenav -->
-                    <nav class="d-none d-xl-block col-xl-2">
-                        <ul class="sidenav-sticky">
-                            <li class="nav-item">
-                                <a href="#pagination">Pagination</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#pagination-small">Pagination Small</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                <h4>This is an example of blank page</h4>
             </main>
-            
+
             <!-- Content Footer -->
             <%= htmlWebpackPlugin.options.footer %>
         </section>

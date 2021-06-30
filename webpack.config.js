@@ -169,6 +169,10 @@ let HtmlPagesList = [
         template: 'BoxIcons',
         title: 'Box Icons',
     },
+    {
+        template: 'Blank',
+        title: 'Blank Page',
+    },
 ];
 
 let multiplesFiles = HtmlPagesList.map( page => {
